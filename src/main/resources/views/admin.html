@@ -42,22 +42,22 @@
 
         <!-- 添加姓名输入框 -->
         <div>
-            <label for="patientName">患者姓名：</label>
-            <input type="text" id="patientName" v-model="registerForm.name" placeholder="请输入患者姓名">
+            <label for="userName">患者姓名：</label>
+            <input type="text" id="userName" v-model="registerForm.userName" placeholder="请输入患者姓名">
         </div>
 
         <!-- 添加性别单选按钮 -->
         <div>
-            <label for="patientName">患者性别：</label>
-            <input type="radio" style="width: 26%; height: 18px;" id="male" value="male" v-model="registerForm.gender"> <label for="male">男</label>
-            <input type="radio" style="width: 26%; height: 18px;" id="female" value="female" v-model="registerForm.gender"> <label for="female">女</label>
+            <label >患者性别：</label>
+            <input type="radio" style="width: 26%; height: 18px;" id="male" value="male" v-model="registerForm.sex"> <label for="male">男</label>
+            <input type="radio" style="width: 26%; height: 18px;" id="female" value="female" v-model="registerForm.sex"> <label for="female">女</label>
         </div>
 
 
         <!-- 添加出生年月选择框 -->
         <div>
-            <label for="birthdate">出生年月：</label>
-            <input type="date" id="birthdate" v-model="registerForm.birthdate">
+            <label for="birth">出生年月：</label>
+            <input type="date" id="birth" v-model="registerForm.birth">
         </div>
 
         <!-- 添加所在城市输入框 -->
@@ -68,8 +68,8 @@
 
         <!-- 添加手机号码输入框 -->
         <div>
-            <label for="phoneNumber">手机号码：</label>
-            <input type="tel" id="phoneNumber" v-model="registerForm.phoneNumber" placeholder="请输入手机号码">
+            <label for="phone">手机号码：</label>
+            <input type="tel" id="phone" v-model="registerForm.phone" placeholder="请输入手机号码">
         </div>
         <div>
             <button @click="registerSubmit" class="submit-button">确认，下一步</button>
@@ -80,45 +80,50 @@
     let vm = new Vue({
         el: '#login',
         data: {
-            loginForm: {
-                name: '',
-                password: ''
-            },
-            loginRules: {
-                name: [
-                    {required: true, message: '用户名不能为空', trigger: 'blur'}
-                ],
-                password: [
-                    {required: true, message: '密码不能为空', trigger: 'blur'}
-                ]
-            },
             registerForm: {
-                name: '',
-                password: '',
-                rePassword: '',
-                address: '',
-                ip: ''
+                userName: '',
+                sex: '',
+                birth: '',
+                city: '',
+                phone: ''
             },
             registerRules: {
-                name: [
-                    {required: true, message: '用户名不能为空', trigger: 'blur'}
+                userName: [
+                    {required: true, message: '患者姓名不能为空', trigger: 'blur'}
                 ],
-                password: [
-                    {required: true, message: '密码不能为空', trigger: 'blur'},
-                    {min: 6, max: 12, message: '密码长度应该是6到12位', trigger: 'blur'}
+                sex: [
+                    {required: true, message: '患者性别不能为空', trigger: 'blur'}
                 ],
-                rePassword: [
-                    {required: true, message: '重复密码不能为空', trigger: 'blur'},
-                    {min: 6, max: 12, message: '密码长度应该是6到12位', trigger: 'blur'}
+                birth: [
+                    {required: true, message: '出生年月不能为空', trigger: 'blur'}
+                ],
+                city: [
+                    {required: true, message: '所在城市不能为空', trigger: 'blur'}
+                ],
+                phone: [
+                    {required: true, message: '手机号码不能为空', trigger: 'blur'}
                 ]
             },
-            loginVisible: true,
             registerVisible: false
         },
         methods: {
-
             registerSubmit: function () {
-                window.location.href = './problem.html';
+                $.ajax({
+                    url: '/user/register',
+                    type: 'POST',
+                    async: true,
+                    data: this.registerForm,
+                    success: function (data) {
+                        if (data.success) {
+                            window.location.href = './problem.html';
+                        } else {
+                            _this.$message.error(data.msg);
+                        }
+                    },
+                    error: function (data) {
+                        console.log('error:' + JSON.stringify(data));
+                    }
+                });
             }
         }
     });
