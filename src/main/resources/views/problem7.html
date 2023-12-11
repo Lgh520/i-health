@@ -38,41 +38,25 @@
         <img id="logo3" src="./2.png">
     </div>
     <div id="sidebar" style="float: right; width: 50%; padding-right: 30px;color: #409EFF;">
-        <h1 style="margin-bottom: 50px;margin-top: 80px">建立患者档案</h1>
+        <h1 style="margin-bottom: 50px;margin-top: 80px">手机病例</h1>
 
-        <!-- 添加姓名输入框 -->
+        <hr style="margin-top: 20px; margin-bottom: 20px; border: 1px solid #ddd;">
+
+        <p style="margin-top: 20px;">7.根据您的病情为您推荐下面的医生</p>
+
         <div>
-            <label for="patientName">患者姓名：</label>
-            <input type="text" id="patientName" v-model="registerForm.name" placeholder="请输入患者姓名">
+            <label style="width: 30%">
+                <input type="radio" name="symptom" value="肚子痛" style="display: none;">
+                <span @click="registerSubmit1" id="registerSubmit1" class="radio-button">肚子痛</span>
+            </label>
+            <label style="width: 30%">
+                <input type="radio" name="symptom" value="焦虑" style="display: none;">
+                <span @click="registerSubmit2" id="registerSubmit2" class="radio-button">焦虑</span>
+            </label>
         </div>
 
-        <!-- 添加性别单选按钮 -->
         <div>
-            <label for="patientName">患者性别：</label>
-            <input type="radio" style="width: 26%; height: 18px;" id="male" value="male" v-model="registerForm.gender"> <label for="male">男</label>
-            <input type="radio" style="width: 26%; height: 18px;" id="female" value="female" v-model="registerForm.gender"> <label for="female">女</label>
-        </div>
-
-
-        <!-- 添加出生年月选择框 -->
-        <div>
-            <label for="birthdate">出生年月：</label>
-            <input type="date" id="birthdate" v-model="registerForm.birthdate">
-        </div>
-
-        <!-- 添加所在城市输入框 -->
-        <div>
-            <label for="city">所在城市：</label>
-            <input type="text" id="city" v-model="registerForm.city" placeholder="请输入所在城市">
-        </div>
-
-        <!-- 添加手机号码输入框 -->
-        <div>
-            <label for="phoneNumber">手机号码：</label>
-            <input type="tel" id="phoneNumber" v-model="registerForm.phoneNumber" placeholder="请输入手机号码">
-        </div>
-        <div>
-            <button @click="registerSubmit" class="submit-button">确认，下一步</button>
+            <button @click="registerSubmit" class="submit-button">确认，问诊结束</button>
         </div>
     </div>
 </div>
@@ -116,9 +100,54 @@
             registerVisible: false
         },
         methods: {
-
+            switchForm: function () {
+                this.loginVisible = !this.loginVisible;
+                this.registerVisible = !this.registerVisible;
+            },
+            loginSubmit: function () {
+                this.$refs.loginForm.validate((valid) => {
+                    if (valid) {
+                        console.log('登录：' + JSON.stringify(this.loginForm));
+                        let _this = this; // 为了在ajax中使用this.$message，先把vue的this赋值给_this
+                        $.ajax({
+                            url: 'login',
+                            type: 'POST',
+                            async: true,
+                            data: this.loginForm,
+                            success: function (data) {
+                                console.log('success:' + JSON.stringify(data));
+                                if (data.success) {
+                                    window.localStorage.setItem('user', JSON.stringify(data.data.user));
+                                    window.location.href = '/api/admin';
+                                } else {
+                                    _this.$message.error(data.msg);
+                                }
+                            },
+                            error: function (data) {
+                                console.log('error:' + JSON.stringify(data));
+                            }
+                        });
+                    } else {
+                        console.log('error login!!');
+                        return false;
+                    }
+                });
+            },
             registerSubmit: function () {
-                window.location.href = './problem.html';
+                window.location.href = './index.html';
+            },
+            registerSubmit1: function () {
+                console.log("1111111111111")
+                $("#registerSubmit1").css("background-color", "#409EFF");
+                $("#registerSubmit1").css("color", "#fff");
+                $("#registerSubmit2").css("background-color", "#fff");
+                $("#registerSubmit2").css("color", "#409EFF");
+            },
+            registerSubmit2: function () {
+                $("#registerSubmit1").css("background-color", "#fff");
+                $("#registerSubmit1").css("color", "#409EFF");
+                $("#registerSubmit2").css("background-color", "#409EFF");
+                $("#registerSubmit2").css("color", "#fff");
             }
         }
     });
@@ -193,6 +222,29 @@
     .submit-button:hover {
         background-color: #3074c8; /* 悬停时改变背景颜色 */
     }
+    .radio-button {
+        display: inline-block;
+        padding: 8px 16px;
+        background-color: #fff;
+        color: #409EFF;
+        border: 2px solid #409EFF;
+        border-radius: 5px;
+        margin-right: 10px;
+        cursor: pointer;
+    }
+
+    /* 选中时的样式 */
+    .radio-button input:checked + span {
+        background-color: #409EFF;
+        color: #fff;
+    }
+
+    /* 根据需要调整样式 */
+    .radio-button:hover {
+        background-color: #409EFF;
+        color: #fff;
+    }
+
 </style>
 </body>
 </html>

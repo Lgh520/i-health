@@ -96,66 +96,22 @@
                 this.registerVisible = !this.registerVisible;
             },
             loginSubmit: function () {
-                this.$refs.loginForm.validate((valid) => {
-                    if (valid) {
-                        console.log('登录：' + JSON.stringify(this.loginForm));
-                        let _this = this; // 为了在ajax中使用this.$message，先把vue的this赋值给_this
-                        $.ajax({
-                            url: 'login',
-                            type: 'POST',
-                            async: true,
-                            data: this.loginForm,
-                            success: function (data) {
-                                console.log('success:' + JSON.stringify(data));
-                                if (data.success) {
-                                    window.localStorage.setItem('user', JSON.stringify(data.data.user));
-                                    window.location.href = '/api/admin';
-                                } else {
-                                    _this.$message.error(data.msg);
-                                }
-                            },
-                            error: function (data) {
-                                console.log('error:' + JSON.stringify(data));
-                            }
-                        });
-                    } else {
-                        console.log('error login!!');
-                        return false;
+                window.location.href = './admin.html';
+                $.ajax({
+                    url: 'login',
+                    type: 'POST',
+                    async: true,
+                    data: this.loginForm,
+                    success: function (data) {
+                        if (data.success) {
+                            window.location.href = './admin.html';
+                        } else {
+                            _this.$message.error(data.msg);
+                        }
+                    },
+                    error: function (data) {
+                        console.log('error:' + JSON.stringify(data));
                     }
-                });
-            },
-            registerSubmit: function () {
-                console.log('注册：' + JSON.stringify(this.registerForm));
-                this.$refs.registerForm.validate((valid) => {
-                   if (valid) {
-                       if (this.registerForm.password !== this.registerForm.rePassword) {
-                           this.$message.warning('两次输入的密码不相同');
-                           return false;
-                       }
-                       console.log('注册：' + JSON.stringify(this.registerForm));
-                       let _this = this; // 为了在ajax中使用this.$message，先把vue的this赋值给_this
-                       $.ajax({
-                           url: 'register',
-                           type: 'POST',
-                           async: true,
-                           data: this.registerForm,
-                           success: function (data) {
-                               console.log('success:' + JSON.stringify(data));
-                               if (data.success) {
-                                   window.localStorage.setItem('user', JSON.stringify(data.data.user));
-                                   window.location.href = '/api/admin';
-                               } else {
-                                   _this.$message.error(data.msg);
-                               }
-                           },
-                           error: function (data) {
-                               console.log('error:' + JSON.stringify(data));
-                           }
-                       });
-                   } else {
-                       console.log('error register!!');
-                       return false;
-                   }
                 });
             }
         }
