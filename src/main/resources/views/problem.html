@@ -140,12 +140,14 @@
             },
             registerSubmit1: function () {
                 console.log("1111111111111")
+                localStorage.setItem("item","1")
                 $("#registerSubmit1").css("background-color", "#409EFF");
                 $("#registerSubmit1").css("color", "#fff");
                 $("#registerSubmit2").css("background-color", "#fff");
                 $("#registerSubmit2").css("color", "#409EFF");
             },
             registerSubmit2: function () {
+                localStorage.setItem("item","2")
                 $("#registerSubmit1").css("background-color", "#fff");
                 $("#registerSubmit1").css("color", "#409EFF");
                 $("#registerSubmit2").css("background-color", "#409EFF");
@@ -191,6 +193,7 @@
     #logo3 {
         width: 470px;
         height: 560px;
+        margin-left: 65px;
     }
     #topLinks {
         position: absolute;
