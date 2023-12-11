@@ -109,12 +109,13 @@
         methods: {
             registerSubmit: function () {
                 $.ajax({
-                    url: '/user/register',
+                    url: '/ihealth/user/register',
                     type: 'POST',
+                    contentType: 'application/json',
                     async: true,
-                    data: this.registerForm,
+                    data: JSON.stringify(this.registerForm),
                     success: function (data) {
-                        if (data.success) {
+                        if (data.code==0) {
                             window.location.href = './problem.html';
                         } else {
                             _this.$message.error(data.msg);

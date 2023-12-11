@@ -37,7 +37,7 @@
                 <el-form ref="loginForm" :model="loginForm" v-show="loginVisible" :rules="loginRules"
                          hide-required-asterisk="false" label-width="80px">
                     <el-form-item style="color: #409EFF;" label="账号" prop="userName">
-                        <el-input v-model="loginForm.userName"></el-input>
+                        <el-input v-model="loginForm.userId"></el-input>
                     </el-form-item>
                     <el-form-item style="color: #409EFF;" label="密码" prop="passwd">
                         <el-input type="passwd" v-model="loginForm.passwd" suffix-icon="el-icon-view"></el-input>
@@ -56,11 +56,11 @@
         el: '#login',
         data: {
             loginForm: {
-                userName: '',
+                userId: '',
                 passwd: ''
             },
             loginRules: {
-                userName: [
+                userId: [
                     {required: true, message: '用户名不能为空', trigger: 'blur'}
                 ],
                 passwd: [
@@ -97,12 +97,13 @@
             },
             loginSubmit: function () {
                 $.ajax({
-                    url: '/user/login',
+                    url: '/ihealth/user/login',
                     type: 'POST',
+                    contentType: 'application/json',
                     async: true,
-                    data: this.loginForm,
+                    data: JSON.stringify(this.loginForm),
                     success: function (data) {
-                        if (data.success) {
+                        if (data.code==0) {
                             window.location.href = './admin.html';
                         } else {
                             _this.$message.error(data.msg);
