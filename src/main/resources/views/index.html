@@ -104,6 +104,7 @@
                     data: JSON.stringify(this.loginForm),
                     success: function (data) {
                         if (data.code==0) {
+                            localStorage.setItem("login","1")
                             window.location.href = './admin.html';
                         } else {
                             _this.$message.error(data.msg);

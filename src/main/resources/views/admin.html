@@ -108,6 +108,21 @@
         },
         methods: {
             registerSubmit: function () {
+                if (this.registerForm.userName == ''){
+                    return this.$message.error('请填写用户名')
+                }
+                if (this.registerForm.sex == ''){
+                    return this.$message.error('请填写性别')
+                }
+                if (this.registerForm.birth == ''){
+                    return this.$message.error('请填写出生年月')
+                }
+                if (this.registerForm.city == ''){
+                    return this.$message.error('请填写所在城市')
+                }
+                if (this.registerForm.phone == ''){
+                    return this.$message.error('请填写手机号码')
+                }
                 $.ajax({
                     url: '/ihealth/user/register',
                     type: 'POST',

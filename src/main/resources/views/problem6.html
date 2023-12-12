@@ -66,6 +66,7 @@
     let vm = new Vue({
         el: '#login',
         data: {
+            isSelect: false,
             loginForm: {
                 name: '',
                 password: ''
@@ -136,9 +137,13 @@
                 });
             },
             registerSubmit: function () {
+                if (!this.isSelect){
+                    return this.$message.error("请选择答案")
+                }
                 window.location.href = './problem7.html';
             },
             registerSubmit1: function () {
+                this.isSelect = true
                 console.log("1111111111111")
                 $("#registerSubmit1").css("background-color", "#409EFF");
                 $("#registerSubmit1").css("color", "#fff");
@@ -146,6 +151,7 @@
                 $("#registerSubmit2").css("color", "#409EFF");
             },
             registerSubmit2: function () {
+                this.isSelect = true
                 $("#registerSubmit1").css("background-color", "#fff");
                 $("#registerSubmit1").css("color", "#409EFF");
                 $("#registerSubmit2").css("background-color", "#409EFF");
