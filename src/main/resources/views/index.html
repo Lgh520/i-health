@@ -40,11 +40,11 @@
                         <el-input v-model="loginForm.userId"></el-input>
                     </el-form-item>
                     <el-form-item style="color: #409EFF;" label="密码" prop="passwd">
-                        <el-input type="passwd" v-model="loginForm.passwd" suffix-icon="el-icon-view"></el-input>
+                        <el-input type="passwd" v-model="loginForm.passwd"></el-input>
                     </el-form-item>
 
                     <el-form-item>
-                        <el-button type="primary" v-on:click="loginSubmit">登入</el-button>
+                        <el-button type="primary" v-on:click="loginSubmit">登录</el-button>
                     </el-form-item>
                 </el-form>
             </el-main>
