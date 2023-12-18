@@ -7,6 +7,9 @@ import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+/**
+ * 启动类
+ */
 @ComponentScan("com.project.ihealth.*")
 @MapperScan("com.project.ihealth.dao")
 @SpringBootApplication(exclude = {DataSourceAutoConfiguration.class})
