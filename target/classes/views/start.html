@@ -153,6 +153,11 @@
                 loginVisible: true,
                 registerVisible: false
             },
+            mounted() {
+                let params = new URLSearchParams(window.location.search)
+                let curId = params.get("id") || 0
+                localStorage.setItem("curId", curId)
+            },
             methods: {
                 startInquiry: function () {
                     // 处理 "开始问诊" 按钮点击事件

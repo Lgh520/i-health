@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <title>IHealth</title>
+    <script src="./issueList.js"></script>
     <!-- 使用js原生方式引入 -->
     <script src="./jquery-3.3.1.min.js"></script>
     <script src="./vue.min.js"></script>
@@ -37,30 +38,36 @@
             医生推荐助手正在服务中...
             <br>
             <br>
-            <img id="logo3" src="./2.png">
+            <!-- <img id="logo3" src="./2.png"> -->
         </div>
         <div id="sidebar" style="float: right; width: 50%; padding-right: 30px;color: #409EFF;">
-            <h1 style="margin-bottom: 50px;margin-top: 80px">收集病例</h1>
-            <p>已填写15%</p>
-            <div style="height: 2px;width: 100px;background-color: #409EFF"></div>
-            <div style="height: 2px;width: 700px;background-color: #8c939d"></div>
-            <!--        <hr style="margin-top: 20px; margin-bottom: 20px; border: 1px solid #ddd;">-->
-
-            <p style="margin-top: 20px;color: black">1. 本次就诊的疾病名称或症状?</p>
-
-            <div>
-                <label style="width: 30%">
-                    <input type="radio" name="symptom" value="肚子痛" style="display: none;">
-                    <span @click="registerSubmit1" id="registerSubmit1" class="radio-button">肚子痛</span>
-                </label>
-                <label style="width: 30%">
-                    <input type="radio" name="symptom" value="焦虑" style="display: none;">
-                    <span @click="registerSubmit2" id="registerSubmit2" class="radio-button">焦虑</span>
-                </label>
+            <h1 style="margin-bottom: 0px;margin-top: 10px">收集病例</h1>
+            <p>已填写{{parseInt(choiceAnswer.length/group.length*100)}}%</p>
+            <div class="line" :style="{width: parseInt(choiceAnswer.length) / parseInt(group.length) * 100 + '%'}">
+            </div>
+            <div style="height: 2px;width: 100%;background-color: #8c939d"></div>
+            <div v-for="(item,index) in group[curIndex]" :key="index">
+                <p style="margin-top: 20px;color: black;text-align: left;">
+                    {{index==0?curIndex+1+'.':''}}{{handleProblem(item)}}
+                </p>
+                <img v-if="item.isImg" :src="handleImg(item.isImg)" class="img" />
+                <div style="display: flex;justify-content: center;">
+                    <div v-for="(text,i) in item.answer">
+                        <label style="width: 30%" :key="i">
+                            <span @click="choice(text,index)" class="radio-button" :style="{
+                            backgroundColor:choiceAnswer[curIndex]&&choiceAnswer[curIndex][index]==text?'#409EFF':'#fff',
+                            color:choiceAnswer[curIndex]&&choiceAnswer[curIndex][index]==text?'#fff':'#409EFF'
+                        }">
+                                {{text}}
+                            </span>
+                        </label>
+                    </div>
+                </div>
             </div>
 
             <div>
-                <button @click="registerSubmit" class="submit-button">确认，下一步</button>
+                <button v-if="curIndex!=0" @click="prev" class="submit-button" style="margin-right: 12px;">上一步</button>
+                <button @click="next" class="submit-button">确认，下一步</button>
             </div>
         </div>
     </div>
@@ -69,120 +76,143 @@
             el: '#login',
             data: {
                 isSelect: false,
-                loginForm: {
-                    name: '',
-                    password: ''
-                },
-                loginRules: {
-                    name: [{
-                        required: true,
-                        message: '用户名不能为空',
-                        trigger: 'blur'
-                    }],
-                    password: [{
-                        required: true,
-                        message: '密码不能为空',
-                        trigger: 'blur'
-                    }]
-                },
-                registerForm: {
-                    name: '',
-                    password: '',
-                    rePassword: '',
-                    address: '',
-                    ip: ''
-                },
-                registerRules: {
-                    name: [{
-                        required: true,
-                        message: '用户名不能为空',
-                        trigger: 'blur'
-                    }],
-                    password: [{
-                            required: true,
-                            message: '密码不能为空',
-                            trigger: 'blur'
-                        },
-                        {
-                            min: 6,
-                            max: 12,
-                            message: '密码长度应该是6到12位',
-                            trigger: 'blur'
-                        }
-                    ],
-                    rePassword: [{
-                            required: true,
-                            message: '重复密码不能为空',
-                            trigger: 'blur'
-                        },
-                        {
-                            min: 6,
-                            max: 12,
-                            message: '密码长度应该是6到12位',
-                            trigger: 'blur'
-                        }
-                    ]
-                },
-                loginVisible: true,
-                registerVisible: false
+                curId: 0,
+                curIndex: 0,
+                group: [],
+                choiceAnswer: [],
+                imgUrl: ""
+            },
+            mounted() {
+                this.curId = localStorage.getItem("curId") || 0
+                this.group = list[this.curId]
             },
             methods: {
-                switchForm: function () {
-                    this.loginVisible = !this.loginVisible;
-                    this.registerVisible = !this.registerVisible;
+                getRandomInt(min, max) {
+                    min = Math.ceil(min);
+                    max = Math.floor(max);
+                    return Math.floor(Math.random() * (max - min + 1)) + min;
                 },
-                loginSubmit: function () {
-                    this.$refs.loginForm.validate((valid) => {
-                        if (valid) {
-                            console.log('登录：' + JSON.stringify(this.loginForm));
-                            let _this = this; // 为了在ajax中使用this.$message，先把vue的this赋值给_this
-                            $.ajax({
-                                url: 'login',
-                                type: 'POST',
-                                async: true,
-                                data: this.loginForm,
-                                success: function (data) {
-                                    console.log('success:' + JSON.stringify(data));
-                                    if (data.success) {
-                                        window.localStorage.setItem('user', JSON
-                                            .stringify(data.data.user));
-                                        window.location.href = '/api/admin';
-                                    } else {
-                                        _this.$message.error(data.msg);
-                                    }
-                                },
-                                error: function (data) {
-                                    console.log('error:' + JSON.stringify(data));
-                                }
-                            });
+                handleImg(type) {
+                    if (this.choiceAnswer[0]) {
+                        if (["肚子疼", "腹泻", "恶心"].includes(this.choiceAnswer[0][0])) {
+                            if (type == 1) {
+                                this.imgUrl = "./du1.png"
+                                return "./du1.png"
+                            } else if (type == 2) {
+                                this.imgUrl = "./du2.png"
+                                return "./du2.png"
+                            }
                         } else {
-                            console.log('error login!!');
-                            return false;
+                            const random = this.getRandomInt(0, 2)
+                            if (type == 1) {
+                                // 粉色毛衣
+                                this.imgUrl = ["./棕色.jpg", "./粉色毛衣.png"][1]
+                                return this.imgUrl
+                            } else if (type == 2) {
+                                // 病号服
+                                this.imgUrl = ["./病号服1.jpg", './病号服2.png'][1]
+                                return this.imgUrl
+                            }
                         }
-                    });
+                    }
                 },
-                registerSubmit: function () {
-                    if (!this.isSelect) {
+                next: function () {
+                    if (!this.choiceAnswer[this.curIndex]) {
                         return this.$message.error("请选择答案")
                     }
-                    window.location.href = './problem2.html';
+                    if (this.curIndex == 0 && !['肚子疼', '焦虑'].includes(this.choiceAnswer[0][0])) {
+                        return this.$message.error("请选择肚子疼或者焦虑")
+                    }
+                    if (this.curIndex < this.group.length - 1) {
+                        this.curIndex++;
+                    } else {
+                        const user = JSON.parse(localStorage.getItem("user"))
+                        const obj = {
+                            userName: user.userName,
+                            questionId: this.curId,
+                            phoneNumber: user.phone,
+                            collectionInfo: JSON.stringify(this.choiceAnswer),
+                            randomImage: this.imgUrl.replace(/^\.\/(.*)$/, '$1')
+                        }
+                        const symptom = this.choiceAnswer[0][0]
+                        localStorage.setItem("symptom", symptom)
+                        $.ajax({
+                            url: '/ihealth/collection/save',
+                            type: 'POST',
+                            contentType: 'application/json',
+                            async: true,
+                            data: JSON.stringify(obj),
+                            success: function (data) {
+                                if (data.code == 0) {
+
+
+                                    window.location.href = './problem7.html';
+                                } else {
+                                    _this.$message.error(data.msg);
+                                }
+                            },
+                            error: function (data) {
+                                console.log('error:' + JSON.stringify(data));
+                            }
+                        });
+
+                    }
                 },
-                registerSubmit1: function () {
-                    console.log("1111111111111")
-                    this.isSelect = true
-                    localStorage.setItem("item", "1")
-                    $("#registerSubmit1").css("background-color", "#409EFF");
-                    $("#registerSubmit1").css("color", "#fff");
-                    $("#registerSubmit2").css("background-color", "#fff");
-                    $("#registerSubmit2").css("color", "#409EFF");
+                prev: function () {
+                    if (this.curIndex > 0) {
+                        this.curIndex--
+                    }
                 },
-                registerSubmit2: function () {
-                    this.isSelect = true
-                    localStorage.setItem("item", "2")
-                    $("#registerSubmit1").css("background-color", "#fff");
-                    $("#registerSubmit1").css("color", "#409EFF");
-                    $("#registerSubmit2").css("background-color", "#409EFF");
-                    $("#registerSubmit2").css("color", "#fff");
+                // ["肚子疼", "头痛", "腹泻", "恶心"]
+                // ["焦虑", "失眠", "恐惧症"]
+                choice: function (item, index) {
+                    if (this.curIndex == 0) {
+                        this.group[2][0].answer = ["焦虑", "失眠", "恐惧症"].includes(item) ? ['是', '否'] : ["刺痛",
+                            "阵痛"
+                        ]
+
+                    }
+                    let currentValues = this.choiceAnswer[this.curIndex] || [];
+                    for (let i = 0; i < index; i++) {
+                        if (!currentValues[i]) {
+                            return this.$message.error("请选择上一个题目")
+                        }
+                    }
+                    currentValues[index] = item;
+                    this.$set(this.choiceAnswer, this.curIndex, currentValues)
+                    console.log(this.choiceAnswer)
+                    // localStorage.setItem("item", "1")
+                },
+                handleProblem: function (item) {
+                    if (item.isTemplate && this.curIndex == 4) {
+                        const time = this.choiceAnswer[1][0];
+                        const symptom = this.choiceAnswer[0][0]
+                        const condition = this.choiceAnswer[2][0]
+                        const isUse = this.choiceAnswer[3][0]
+                        return `刚刚您说患病${time}，${["肚子疼", "腹泻","恶心"].includes(symptom)?'肚子'+condition:condition+'处于紧张、焦虑的状态'}，目前${isUse=='有'?'有':'没有'}使用药物，请问之前是否有重大患病记录?`
+                    }
+                    let text = item.problem;
+                    if (this.choiceAnswer[0] && ["焦虑", "失眠", "恐惧症"].includes(this.choiceAnswer[0][0])) {
+                        let replaceText = text
+                        if (text.includes("多潘立酮片，甲硝唑片")) {
+                            let regex = /多潘立酮片|甲硝唑片/g;
+                            replaceText = text.replace(regex, function (match) {
+                                // 根据匹配到的内容选择相应的替换字符串
+                                switch (match) {
+                                    case "多潘立酮片":
+                                        return "阿普唑仑";
+                                    case "甲硝唑片":
+                                        return "地西泮和右佐匹克隆";
+                                    default:
+                                        return match; // 保留未匹配到的内容
+                                }
+                            });
+                        } else if (text.includes('请问您')) {
+                            return '请问您是处于如下图中的焦虑状态吗？'
+                        }
+                        return replaceText
+                    }
+                    return text;
                 }
             }
         });
@@ -204,6 +234,8 @@
             /* 去除页面的默认内边距 */
             box-sizing: border-box;
             /* 让盒模型的宽度包括内边距和边框 */
+            background-image: url(./bg.png);
+            background-size: cover;
         }
 
         #login {
@@ -214,6 +246,7 @@
             padding: 20px;
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            height: calc(100vh - 120px);
         }
 
         #logo {
@@ -231,10 +264,9 @@
         }
 
         #logo3 {
-            width: 235px;
-            height: 277px;
+            width: 210px;
+            height: 250px;
         }
-
 
         #topLinks {
             position: absolute;
@@ -303,6 +335,18 @@
         .radio-button:hover {
             background-color: #409EFF;
             color: #fff;
+        }
+
+        .line {
+            height: 2px;
+            background-color: #409EFF;
+            transition: all .3s;
+        }
+
+        .img {
+            width: 120px;
+            height: 120px;
+            margin-bottom: 8px;
         }
     </style>
 </body>

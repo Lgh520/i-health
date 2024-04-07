@@ -26,7 +26,7 @@
             <span>|</span>
             <a href="phone.html">联系电话</a>
         </div>
-        <div style="margin: 120px auto 0;width: 500px;">
+        <div class="login-form">
             <el-container>
                 <el-header style="text-align: center; color: #409EFF; font-size: 28px;">
                     <div>
@@ -159,20 +159,22 @@
             /* 去除页面的默认内边距 */
             box-sizing: border-box;
             /* 让盒模型的宽度包括内边距和边框 */
+            background-image: url(./bg.png);
+            background-size: cover;
         }
 
         #login {
             background-color: #fff;
-            /* 设置登录区域的背景颜色为白色 */
             margin: 60px auto 0;
             width: 90%;
-            height: 770px;
+            height: calc(100vh - 120px);
             padding: 20px;
-            /* 添加内边距，使内容与边框有一定距离 */
             border-radius: 10px;
-            /* 添加边框圆角 */
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            /* 添加阴影效果 */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
         }
 
         .el-main {
@@ -191,6 +193,10 @@
             color: #fff;
             /* 将字体颜色设置为白色 */
             text-decoration-line: underline;
+        }
+
+        .login-form {
+            width: 500px;
         }
     </style>
 </body>
