@@ -21,12 +21,18 @@ public class CollectionController {
     private HttpServletRequest servletRequest;
 
     @PostMapping("/save")
-    public RestResponse<Void> saveCollection(@RequestBody CollectionEntry entry) {
+    public RestResponse<Long> saveCollection(@RequestBody CollectionEntry entry) {
         String clientIp = getClientIpAddr(servletRequest);
         System.out.println("clientIp = " + clientIp);
         entry.setIp(clientIp);
         collectionMapper.save(entry);
-        return RestResponse.success(null);
+        return RestResponse.success(entry.getId());
+    }
+
+    @PostMapping("/saveResult")
+    public Object saveDoctorRecommendation(@RequestBody CollectionEntry entry) {
+        collectionMapper.update(entry);
+        return RestResponse.success(entry.getId());
     }
 
     private String getClientIpAddr(HttpServletRequest request) {

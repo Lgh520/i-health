@@ -9,6 +9,7 @@ import java.util.List;
 public interface CollectionMapper {
 
     void save(CollectionEntry collectionEntity);
+    void update(CollectionEntry collectionEntity);
 
     CollectionEntry findById(Long id);
 

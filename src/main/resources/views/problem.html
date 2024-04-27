@@ -88,19 +88,38 @@
             methods: {
                 handleImg(type) {
                     if (this.choiceAnswer[0]) {
-                        if (this.choiceAnswer[0][0] == '肚子疼') {
+                        const user = JSON.parse(localStorage.getItem("user"))
+                        if (["肚子疼", "腹泻", "恶心"].includes(this.choiceAnswer[0][0])) {
                             if (type == 1) {
-                                return "./du1.png"
+                                if (user.sex == "male") {
+                                    this.imgUrl = "./img/肚子疼常服男.gif"
+                                } else {
+                                    this.imgUrl = "./img/肚子疼常服女.gif"
+                                }
                             } else if (type == 2) {
-                                return "./du2.png"
+                                if (user.sex == "male") {
+                                    this.imgUrl = "./img/肚子疼病服男.gif"
+                                } else {
+                                    this.imgUrl = "./img/肚子疼病服女.gif"
+                                }
                             }
                         } else {
+                            // const random = this.getRandomInt(0, 2)
                             if (type == 1) {
-                                return "./jiao1.jpg"
+                                if (user.sex == "male") {
+                                    this.imgUrl = "./img/焦虑常服.gif"
+                                } else {
+                                    this.imgUrl = "./img/焦虑便装女生.gif"
+                                }
                             } else if (type == 2) {
-                                return "./jiao2.jpg"
+                                if (user.sex == "male") {
+                                    this.imgUrl = "./img/焦虑病号服.gif"
+                                } else {
+                                    this.imgUrl = "./img/焦虑病服女生.gif"
+                                }
                             }
                         }
+                        return this.imgUrl;
                     }
                 },
                 next: function () {
@@ -129,7 +148,7 @@
                                 if (data.code == 0) {
 
 
-                                    window.location.href = './problem7.html';
+                                    window.location.href = './problem7.html?id=' + data.data;
                                 } else {
                                     _this.$message.error(data.msg);
                                 }
@@ -171,6 +190,7 @@
                         return `刚刚您说患病${time}，${symptom=='肚子疼'?'肚子'+condition:condition+'处于紧张、焦虑的状态'}，目前${isUse=='有'?'有':'没有'}使用药物，请问之前是否有重大患病记录?`
                     }
                     let text = item.problem;
+                    console.log(text.includes('疼痛的类型'))
                     if (this.choiceAnswer[0] && this.choiceAnswer[0][0] == '焦虑') {
                         let replaceText = text
                         if (text.includes("多潘立酮片，甲硝唑片")) {

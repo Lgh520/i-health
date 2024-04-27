@@ -16,4 +16,5 @@ public class CollectionEntry {
     private String collectionInfo;
     private LocalDateTime createdAt;
     private String randomImage;
+    private String doctorRecommendation;
 }
