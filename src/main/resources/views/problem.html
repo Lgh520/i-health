@@ -166,9 +166,12 @@
                     }
                 },
                 choice: function (item, index) {
+
                     if (this.curIndex == 0) {
                         this.group[2][0].answer = item == '焦虑' ? ['长期', '短期'] : ["刺痛", "微痛"]
-
+                        if(item != "肚子疼" || item != "焦虑"){
+                            return this.$message.error("请选择肚子疼或焦虑")
+                        }
                     }
                     let currentValues = this.choiceAnswer[this.curIndex] || [];
                     for (let i = 0; i < index; i++) {

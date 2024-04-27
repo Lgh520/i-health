@@ -46,14 +46,15 @@
             <div style="height: 2px;width: 100%;background-color: #8c939d"></div>
 
             <p style="margin-top: 20px;color: black">
-                7.{{curId>3?'根据您的病情为您推荐下面的医生':'我理解您当前的处境很痛苦，祝您早日康复。以下是根据您的病情为您推荐下面的医生。'}}</p>
+                6.{{curId>3?'根据您的病情为您推荐的医生':'我理解您当前的处境很痛苦，我会尽力帮助您。以下是根据您的病情为您推荐的医生。'}}</p>
 
             <div>
                 <img style="height: 165px" v-if="isOne" src="肚子痛医生.png">
                 <img style="height: 165px" v-else src="焦虑医生.png">
             </div>
             <div>
-                <button @click="registerSubmit" class="submit-button">确认，问诊结束</button>
+                <button @click="confirm('取消，不接受该医生推荐')" class="cancel-button">取消，不接受该医生推荐</button>
+                <button @click="confirm('确认，接受该医生推荐')" class="submit-button">确认，接受该医生推荐</button>
             </div>
         </div>
     </div>
@@ -62,14 +63,45 @@
             el: '#login',
             data: {
                 isOne: true,
+                urlList: [
+                    "https://www.credamo.com/s/ZnQzemano/",
+                    "https://www.credamo.com/s/RFBrQnano/",
+                    "https://www.credamo.com/s/fUjMN3ano/",
+                    "https://www.credamo.com/s/BRJ3Mrano/",
+                    "https://www.credamo.com/s/MbAVzeano/",
+                    "https://www.credamo.com/s/vAR73eano/",
+                    "https://www.credamo.com/s/IbUvy2ano/",
+                    "https://www.credamo.com/s/jiiYFvano/"
+                ]
             },
             methods: {
-                registerSubmit: function () {
-                    window.location.href = './index.html';
+                confirm: function (value) {
+                    var queryString = window.location.search;
+                    var id = Number(queryString.replace('?id=', ''));
+                    const curId = localStorage.getItem("curId") || 0
+                    let doctorResult = {
+                        "id": id,
+                        "doctorRecommendation": value
+                    }
+                    $.ajax({
+                        url: '/ihealth/collection/saveResult',
+                        type: 'POST',
+                        contentType: 'application/json',
+                        async: false,
+                        data: JSON.stringify(doctorResult),
+                        success: function (data) {
+                            // do nothing
+                        },
+                        error: function (data) {
+                            console.log("error: save failed!");
+                        }
+                    });
+                    window.location.href = this.urlList[curId];
                 },
+
             },
             created() {
-                this.isOne = localStorage.getItem("symptom") == "肚子疼";
+                this.isOne = ["肚子疼", "腹泻", "恶心"].includes(localStorage.getItem("symptom"));
                 this.curId = localStorage.getItem("curId") || 0
             }
         });
@@ -169,6 +201,21 @@
         .submit-button:hover {
             background-color: #3074c8;
             /* 悬停时改变背景颜色 */
+        }
+
+        .cancel-button {
+            border: 1px solid #409EFF;
+            background-color: #fff;
+            padding: 10px 20px;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 40px;
+            margin-right: 20px;
+        }
+
+        .cancel-button:hover {
+            border: 1px solid #3074c8;
         }
 
         .radio-button {
