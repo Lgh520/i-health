@@ -71,10 +71,10 @@
             </div>
 
             <!-- 添加手机号码输入框 -->
-            <div class="form-item">
+            <!-- <div class="form-item">
                 <label for="phone">手机号码：</label>
                 <input type="tel" id="phone" v-model="registerForm.phone" placeholder="请输入手机号码">
-            </div>
+            </div> -->
             <div>
                 <button @click="registerSubmit" class="submit-button">确认，下一步</button>
             </div>
@@ -134,9 +134,9 @@
                     if (this.registerForm.city == '') {
                         return this.$message.error('请填写所在城市')
                     }
-                    if (this.registerForm.phone == '') {
-                        return this.$message.error('请填写手机号码')
-                    }
+                    // if (this.registerForm.phone == '') {
+                    //     return this.$message.error('请填写手机号码')
+                    // }
                     localStorage.setItem("user", JSON.stringify(this.registerForm))
                     $.ajax({
                         url: '/ihealth/user/register',

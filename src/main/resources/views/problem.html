@@ -51,6 +51,7 @@
                     {{index==0?curIndex+1+'.':''}}{{handleProblem(item)}}
                 </p>
                 <img v-if="item.isImg" :src="handleImg(item.isImg)" class="img" />
+                <div v-if="item.isImg" style="color:#000;margin-bottom:8px">{{description}}</div>
                 <div style="display: flex;justify-content: center;">
                     <div v-for="(text,i) in item.answer">
                         <label style="width: 30%" :key="i">
@@ -79,7 +80,8 @@
                 curId: 0,
                 curIndex: 0,
                 group: [],
-                choiceAnswer: []
+                choiceAnswer: [],
+                description: ""
             },
             mounted() {
                 this.curId = localStorage.getItem("curId") || 0
@@ -92,30 +94,38 @@
                         if (["肚子疼", "腹泻", "恶心"].includes(this.choiceAnswer[0][0])) {
                             if (type == 1) {
                                 if (user.sex == "male") {
-                                    this.imgUrl = "./img/肚子疼常服男.gif"
+                                    this.imgUrl = "./img/肚子疼常服男.png"
+                                    this.description = "模拟肚子疼"
                                 } else {
-                                    this.imgUrl = "./img/肚子疼常服女.gif"
+                                    this.imgUrl = "./img/肚子疼常服女.png"
+                                    this.description = "模拟肚子疼"
                                 }
                             } else if (type == 2) {
                                 if (user.sex == "male") {
-                                    this.imgUrl = "./img/肚子疼病服男.gif"
+                                    this.imgUrl = "./img/肚子疼病服男.png"
+                                    this.description = "医生助手正在模拟肚子疼"
                                 } else {
-                                    this.imgUrl = "./img/肚子疼病服女.gif"
+                                    this.imgUrl = "./img/肚子疼病服女.png"
+                                    this.description = "医生助手正在模拟肚子疼"
                                 }
                             }
                         } else {
                             // const random = this.getRandomInt(0, 2)
                             if (type == 1) {
                                 if (user.sex == "male") {
-                                    this.imgUrl = "./img/焦虑常服.gif"
+                                    this.imgUrl = "./img/焦虑男生(角色扮演低).png"
+                                    this.description = "模拟焦虑"
                                 } else {
-                                    this.imgUrl = "./img/焦虑便装女生.gif"
+                                    this.imgUrl = "./img/焦虑便装女.png"
+                                    this.description = "模拟焦虑"
                                 }
                             } else if (type == 2) {
                                 if (user.sex == "male") {
-                                    this.imgUrl = "./img/焦虑病号服.gif"
+                                    this.imgUrl = "./img/焦虑男生(角色扮演程度高).png"
+                                    this.description = "医生助手正在模拟焦虑"
                                 } else {
-                                    this.imgUrl = "./img/焦虑病服女生.gif"
+                                    this.imgUrl = "./img/焦虑病服女.png"
+                                    this.description = "医生助手正在模拟焦虑"
                                 }
                             }
                         }
@@ -166,10 +176,9 @@
                     }
                 },
                 choice: function (item, index) {
-
                     if (this.curIndex == 0) {
-                        this.group[2][0].answer = item == '焦虑' ? ['长期', '短期'] : ["刺痛", "微痛"]
-                        if(item != "肚子疼" || item != "焦虑"){
+                        this.group[2][0].answer = ['有', '没有']
+                        if(!(item == "肚子疼" || item == "焦虑")){
                             return this.$message.error("请选择肚子疼或焦虑")
                         }
                     }
@@ -190,13 +199,13 @@
                         const symptom = this.choiceAnswer[0][0]
                         const condition = this.choiceAnswer[2][0]
                         const isUse = this.choiceAnswer[3][0]
-                        return `刚刚您说患病${time}，${symptom=='肚子疼'?'肚子'+condition:condition+'处于紧张、焦虑的状态'}，目前${isUse=='有'?'有':'没有'}使用药物，请问之前是否有重大患病记录?`
+                        return `好的（医生助手正在记录您的病情信息）。为了更好地帮助您，刚刚您说患病${time}，${symptom=='肚子疼'?'肚子'+condition:condition+'处于紧张、焦虑的状态'}，目前${isUse=='有'?'有':'没有'}使用药物，请问之前是否有重大患病记录?`
                     }
                     let text = item.problem;
-                    console.log(text.includes('疼痛的类型'))
+                    console.log(text)
                     if (this.choiceAnswer[0] && this.choiceAnswer[0][0] == '焦虑') {
                         let replaceText = text
-                        if (text.includes("多潘立酮片，甲硝唑片")) {
+                        if (text.includes("多潘立酮片或甲硝唑片")) {
                             let regex = /多潘立酮片|甲硝唑片/g;
                             replaceText = text.replace(regex, function (match) {
                                 // 根据匹配到的内容选择相应的替换字符串
@@ -209,8 +218,8 @@
                                         return match; // 保留未匹配到的内容
                                 }
                             });
-                        } else if (text.includes('疼痛的类型')) {
-                            return '请问长期处于焦虑状态还是突然性的？'
+                        } else if (text.includes('肚子疼')) {
+                            return '下面的图片展示了类似于焦虑的情况，本次疾病去医院就诊过吗？'
                         }
                         return replaceText
                     }
@@ -221,6 +230,9 @@
     </script>
 
     <style>
+        button {
+            padding: 5px 10px !important;
+        }
         a {
             color: #409EFF;
             cursor: pointer;
@@ -308,7 +320,7 @@
             border-radius: 5px;
             /* 圆角边框 */
             cursor: pointer;
-            margin-top: 40px;
+            margin-top: 14px;
         }
 
         .submit-button:hover {
@@ -318,7 +330,7 @@
 
         .radio-button {
             display: inline-block;
-            padding: 8px 16px;
+            padding: 4px 8px;
             background-color: #fff;
             color: #409EFF;
             border: 2px solid #409EFF;
@@ -346,9 +358,9 @@
         }
 
         .img {
-            width: 120px;
-            height: 120px;
-            margin-bottom: 8px;
+            width:200px;
+            height: 200px;
+            margin-bottom: 0px;
         }
     </style>
 </body>
