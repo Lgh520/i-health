@@ -94,18 +94,18 @@
                         if (["肚子疼", "腹泻", "恶心"].includes(this.choiceAnswer[0][0])) {
                             if (type == 1) {
                                 if (user.sex == "male") {
-                                    this.imgUrl = "./img/肚子疼常服男.png"
+                                    this.imgUrl = "./img/diduzinan.png"
                                     this.description = "模拟肚子疼"
                                 } else {
-                                    this.imgUrl = "./img/肚子疼常服女.png"
+                                    this.imgUrl = "./img/diduzinv.png"
                                     this.description = "模拟肚子疼"
                                 }
                             } else if (type == 2) {
                                 if (user.sex == "male") {
-                                    this.imgUrl = "./img/肚子疼病服男.png"
+                                    this.imgUrl = "./img/gaoduzinan.png"
                                     this.description = "医生助手正在模拟肚子疼"
                                 } else {
-                                    this.imgUrl = "./img/肚子疼病服女.png"
+                                    this.imgUrl = "./img/gaoduzinv.png"
                                     this.description = "医生助手正在模拟肚子疼"
                                 }
                             }
@@ -113,18 +113,18 @@
                             // const random = this.getRandomInt(0, 2)
                             if (type == 1) {
                                 if (user.sex == "male") {
-                                    this.imgUrl = "./img/焦虑男生(角色扮演低).png"
+                                    this.imgUrl = "./img/dijiaonan.png"
                                     this.description = "模拟焦虑"
                                 } else {
-                                    this.imgUrl = "./img/焦虑便装女.png"
+                                    this.imgUrl = "./img/dijiaonv.png"
                                     this.description = "模拟焦虑"
                                 }
                             } else if (type == 2) {
                                 if (user.sex == "male") {
-                                    this.imgUrl = "./img/焦虑男生(角色扮演程度高).png"
+                                    this.imgUrl = "./img/gaojiaonan.png"
                                     this.description = "医生助手正在模拟焦虑"
                                 } else {
-                                    this.imgUrl = "./img/焦虑病服女.png"
+                                    this.imgUrl = "./img/gaojiaonv.png"
                                     this.description = "医生助手正在模拟焦虑"
                                 }
                             }
@@ -177,10 +177,13 @@
                 },
                 choice: function (item, index) {
                     if (this.curIndex == 0) {
-                        this.group[2][0].answer = ['有', '没有']
+                        // this.group[2][0].answer = ['有', '没有']
                         if(!(item == "肚子疼" || item == "焦虑")){
                             return this.$message.error("请选择肚子疼或焦虑")
                         }
+                    }
+                    if (this.choiceAnswer[0] && this.choiceAnswer[0][0] == '焦虑'){
+                        this.group[2][0].answer = ['长期', '短期']
                     }
                     let currentValues = this.choiceAnswer[this.curIndex] || [];
                     for (let i = 0; i < index; i++) {
@@ -219,7 +222,7 @@
                                 }
                             });
                         } else if (text.includes('肚子疼')) {
-                            return '下面的图片展示了类似于焦虑的情况，本次疾病去医院就诊过吗？'
+                            return '下面的图片展示了类似于焦虑的情况，请问目前您是长期处于焦虑状态还是短期？'
                         }
                         return replaceText
                     }

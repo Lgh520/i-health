@@ -42,7 +42,7 @@
                             <el-input v-model="loginForm.userId"></el-input>
                         </el-form-item>
                         <el-form-item style="color: #409EFF;" label="密码" prop="passwd">
-                            <el-input type="passwd" v-model="loginForm.passwd"></el-input>
+                            <el-input type="password" value="123" readonly="true"></el-input>
                         </el-form-item>
 
                         <el-form-item>
@@ -59,7 +59,7 @@
             data: {
                 loginForm: {
                     userId: '',
-                    passwd: ''
+                    passwd: '123'
                 },
                 loginRules: {
                     userId: [{
