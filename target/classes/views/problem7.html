@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>IHealth</title>
+    <!-- 使用js原生方式引入 -->
+    <script src="./jquery-3.3.1.min.js"></script>
+    <script src="./vue.min.js"></script>
+    <script src="./vue-resource.min.js"></script>
+    <script src="./element-ui/lib/index.js"></script>
+    <link rel="stylesheet" href="./element-ui/lib/theme-chalk/index.css" />
+    <link rel="icon" type="image/ico" href="./favicon.ico">
+</head>
+
+<body>
+
+    <div id="login" style="text-align: center;">
+        <div id="topLinks" style="text-align: right; padding: 10px;margin-right: 45px;">
+            <a href="start.html">返回首页</a>
+            <span>|</span>
+            <a href="about.html">关于我们</a>
+            <span>|</span>
+            <a href="agreement1.html">用户协议</a>
+            <span>|</span>
+            <a href="agreement.html">隐私政策</a>
+            <span>|</span>
+            <a href="phone.html">联系电话</a>
+        </div>
+        <div id="logo" style="margin-left: 80px;width: 470px;color: #409EFF;text-align: left;">
+            <img id="logo2" src="./1.png" alt="Logo">
+            <br>
+            <br>
+            专家在线 急速图文咨询
+            <br>
+            <br>
+            医生推荐助手正在服务中...
+            <br>
+            <br>
+            <!-- <img id="logo3" src="./2.png"> -->
+        </div>
+        <div id="sidebar" style="float: right; width: 50%; padding-right: 30px;color: #409EFF;">
+            <h1>医生推荐</h1>
+            <p>已填写100%</p>
+            <div style="height: 2px;width: 100%;background-color: #409EFF"></div>
+            <div style="height: 2px;width: 100%;background-color: #8c939d"></div>
+
+            <p style="margin-top: 20px;color: black">
+                6.{{curId>3?'根据您的病情为您推荐的医生':'我可以想象这个病情让你很痛苦，我会尽力帮助您🤗🤗🤗。以下是根据您的病情为您推荐的医生。'}}</p>
+
+            <div>
+                <img style="height: 165px" v-if="isOne" src="肚子痛医生.png">
+                <img style="height: 165px" v-else src="焦虑医生.png">
+            </div>
+            <div>
+                <button @click="confirm('取消，不接受该医生推荐')" class="cancel-button">取消，不接受该医生推荐</button>
+                <button @click="confirm('确认，接受该医生推荐')" class="submit-button">确认，接受该医生推荐</button>
+            </div>
+        </div>
+    </div>
+    <script>
+        let vm = new Vue({
+            el: '#login',
+            data: {
+                isOne: true,
+                urlList: [
+                    "https://pro.powercx.com/r/qev6q?id=0",
+                    "https://pro.powercx.com/r/qev6q?id=1",
+                    "https://pro.powercx.com/r/qev6q?id=2",
+                    "https://pro.powercx.com/r/qev6q?id=3",
+                    "https://pro.powercx.com/r/qev6q?id=4",
+                    "https://pro.powercx.com/r/qev6q?id=5",
+                    "https://pro.powercx.com/r/qev6q?id=6",
+                    "https://pro.powercx.com/r/qev6q?id=7"
+                ]
+            },
+            methods: {
+                confirm: function (value) {
+                    var queryString = window.location.search;
+                    var id = Number(queryString.replace('?id=', ''));
+                    const curId = localStorage.getItem("curId") || 0
+                    // 生成token
+                    // let baseToken = id + '' + Date.now();
+                    // console.log("baseToken=" + baseToken)
+                    // let token = window.btoa(unescape(encodeURI(baseToken)));
+                    // let token = window.location.href;
+                    let token = sessionStorage.getItem("token")
+                    if(token===null){
+                        token = localStorage.getItem("token",token)
+                    }
+                    let doctorResult = {
+                        "id": id,
+                        "doctorRecommendation": value,
+                        "token": token
+                    }
+                    $.ajax({
+                        url: '/ihealth/collection/saveResult',
+                        type: 'POST',
+                        contentType: 'application/json',
+                        async: false,
+                        data: JSON.stringify(doctorResult),
+                        success: function (data) {
+                            // do nothing
+                        },
+                        error: function (data) {
+                            console.log("error: save failed!");
+                        }
+                    });
+                    window.location.href = this.urlList[curId] + "&token="+ token;
+                },
+
+            },
+            created() {
+                this.isOne = ["肚子疼", "腹泻", "恶心"].includes(localStorage.getItem("symptom"));
+                this.curId = localStorage.getItem("curId") || 0
+            }
+        });
+    </script>
+
+    <style>
+        a {
+            color: #409EFF;
+            cursor: pointer;
+            text-decoration-line: underline;
+        }
+
+        body {
+            background-color: #409EFF;
+            /* 设置页面背景颜色为蓝色 */
+            margin: 0;
+            /* 去除页面的默认边距 */
+            padding: 0;
+            /* 去除页面的默认内边距 */
+            box-sizing: border-box;
+            /* 让盒模型的宽度包括内边距和边框 */
+            background-image: url(./bg.png);
+            background-size: cover;
+        }
+
+        #login {
+            background-color: #fff;
+            margin: 60px auto 0;
+            width: 90%;
+            height: 770px;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            height: calc(100vh - 120px);
+        }
+
+        #logo {
+            position: absolute;
+            /* 设置绝对定位，相对于父元素 #login 定位 */
+            top: 80px;
+            left: 80px;
+            width: 120px;
+            height: 80px;
+        }
+
+        #logo2 {
+            width: 120px;
+            height: 80px;
+        }
+
+        #logo3 {
+            width: 210px;
+            height: 250px;
+        }
+
+        #topLinks {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            text-align: right;
+        }
+
+        #topLinks a {
+            margin-left: 10px;
+            color: #fff;
+            /* 将字体颜色设置为白色 */
+            text-decoration-line: underline;
+        }
+
+        #sidebar div label,
+        #sidebar div input {
+            width: 60%;
+            /* 设置输入框宽度为100% */
+            height: 30px;
+            /* 设置输入框高度为40px，可以根据需要调整 */
+            margin-bottom: 20px;
+            /* 设置底部外边距为20px */
+        }
+
+        .submit-button {
+            background-color: #409EFF;
+            /* 蓝色背景 */
+            color: #fff;
+            /* 白色文字 */
+            padding: 10px 20px;
+            /* 增加内边距，使按钮变大 */
+            font-size: 16px;
+            /* 修改字体大小 */
+            border: none;
+            /* 去除边框 */
+            border-radius: 5px;
+            /* 圆角边框 */
+            cursor: pointer;
+            margin-top: 40px;
+        }
+
+        .submit-button:hover {
+            background-color: #3074c8;
+            /* 悬停时改变背景颜色 */
+        }
+
+        .cancel-button {
+            border: 1px solid #409EFF;
+            background-color: #fff;
+            padding: 10px 20px;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 40px;
+            margin-right: 20px;
+        }
+
+        .cancel-button:hover {
+            border: 1px solid #3074c8;
+        }
+
+        .radio-button {
+            display: inline-block;
+            padding: 8px 16px;
+            background-color: #fff;
+            color: #409EFF;
+            border: 2px solid #409EFF;
+            border-radius: 5px;
+            margin-right: 10px;
+            cursor: pointer;
+        }
+
+        /* 选中时的样式 */
+        .radio-button input:checked+span {
+            background-color: #409EFF;
+            color: #fff;
+        }
+
+        /* 根据需要调整样式 */
+        .radio-button:hover {
+            background-color: #409EFF;
+            color: #fff;
+        }
+    </style>
+</body>
+
+</html>

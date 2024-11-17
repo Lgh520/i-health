@@ -1,0 +1,462 @@
+2024-09-05 12:18:37.439 [main] INFO  com.project.ihealth.IHealthApplicaiton.logStarting:50 - Starting IHealthApplicaiton on Lisa-acer with PID 13372 (E:\myProject\i-health\target\classes started by 龙文暇 in E:\myProject\i-health)
+2024-09-05 12:18:37.443 [main] INFO  com.project.ihealth.IHealthApplicaiton.logStartupProfileInfo:659 - No active profile set, falling back to default profiles: default
+2024-09-05 12:18:37.478 [main] INFO  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext.prepareRefresh:590 - Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@51fadaff: startup date [Thu Sep 05 12:18:37 CST 2024]; root of context hierarchy
+2024-09-05 12:18:38.291 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer.initialize:91 - Tomcat initialized with port(s): 8080 (http)
+2024-09-05 12:18:38.302 [main] INFO  org.apache.coyote.http11.Http11NioProtocol.log:180 - Initializing ProtocolHandler ["http-nio-8080"]
+2024-09-05 12:18:38.309 [main] INFO  org.apache.catalina.core.StandardService.log:180 - Starting service [Tomcat]
+2024-09-05 12:18:38.309 [main] INFO  org.apache.catalina.core.StandardEngine.log:180 - Starting Servlet Engine: Apache Tomcat/8.5.29
+2024-09-05 12:18:38.313 [localhost-startStop-1] INFO  org.apache.catalina.core.AprLifecycleListener.log:180 - The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [E:\idea&support\jdk-8u\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\Program Files\MySQL\MySQL Server 8.0\bin;E:\idea&support\jdk-8u\bin;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;D:\app\QQPCMgr\python;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\WINDOWS\system32;E:\BaiduNetdiskDownload\Microsoft VS Code\bin;E:\idea&support\mysql\mysql-8.0.22-winx64\bin;C:\Program Files\Git\cmd;E:\xshell\;E:\Xftp\;E:\;D:\QLDownload\Scripts\;D:\QLDownload\;D:\app\anaconda3;D:\app\anaconda3\Library\mingw-w64\bin;D:\app\anaconda3\Library\usr\bin;D:\app\anaconda3\Library\bin;D:\app\anaconda3\Scripts;D:\app\QQPCMgr\python\Scripts\;D:\app\QQPCMgr\python\;C:\Users\龙文暇\AppData\Local\Microsoft\WindowsApps;;d:\py\Pycharm2021.2.4\bin;;.]
+2024-09-05 12:18:38.392 [localhost-startStop-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/ihealth].log:180 - Initializing Spring embedded WebApplicationContext
+2024-09-05 12:18:38.393 [localhost-startStop-1] INFO  org.springframework.web.context.ContextLoader.prepareWebApplicationContext:285 - Root WebApplicationContext: initialization completed in 915 ms
+2024-09-05 12:18:38.504 [localhost-startStop-1] INFO  o.s.boot.web.servlet.ServletRegistrationBean.addRegistration:185 - Servlet dispatcherServlet mapped to [/]
+2024-09-05 12:18:38.509 [localhost-startStop-1] INFO  o.s.boot.web.servlet.FilterRegistrationBean.configure:244 - Mapping filter: 'characterEncodingFilter' to: [/*]
+2024-09-05 12:18:38.509 [localhost-startStop-1] INFO  o.s.boot.web.servlet.FilterRegistrationBean.configure:244 - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2024-09-05 12:18:38.510 [localhost-startStop-1] INFO  o.s.boot.web.servlet.FilterRegistrationBean.configure:244 - Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2024-09-05 12:18:38.510 [localhost-startStop-1] INFO  o.s.boot.web.servlet.FilterRegistrationBean.configure:244 - Mapping filter: 'requestContextFilter' to: [/*]
+2024-09-05 12:18:38.608 [main] INFO  c.a.d.s.boot.autoconfigure.DruidDataSourceAutoConfigure.dataSource:56 - Init DruidDataSource
+2024-09-05 12:18:38.676 [main] INFO  com.alibaba.druid.pool.DruidDataSource.init:1003 - {dataSource-1} inited
+2024-09-05 12:18:38.868 [main] INFO  o.s.web.servlet.handler.SimpleUrlHandlerMapping.registerHandler:373 - Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2024-09-05 12:18:39.049 [main] INFO  o.s.w.s.m.method.annotation.RequestMappingHandlerAdapter.initControllerAdviceCache:574 - Looking for @ControllerAdvice: org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@51fadaff: startup date [Thu Sep 05 12:18:37 CST 2024]; root of context hierarchy
+2024-09-05 12:18:39.091 [main] INFO  o.s.w.s.m.method.annotation.RequestMappingHandlerMapping.register:547 - Mapped "{[/collection/saveResult],methods=[POST]}" onto public java.lang.Object com.project.ihealth.controller.CollectionController.saveDoctorRecommendation(com.project.ihealth.dao.po.CollectionEntry)
+2024-09-05 12:18:39.092 [main] INFO  o.s.w.s.m.method.annotation.RequestMappingHandlerMapping.register:547 - Mapped "{[/collection/save],methods=[POST]}" onto public com.project.ihealth.po.RestResponse<java.lang.Long> com.project.ihealth.controller.CollectionController.saveCollection(com.project.ihealth.dao.po.CollectionEntry)
+2024-09-05 12:18:39.093 [main] INFO  o.s.w.s.m.method.annotation.RequestMappingHandlerMapping.register:547 - Mapped "{[/user/register],methods=[POST]}" onto public com.project.ihealth.po.RestResponse com.project.ihealth.controller.UserController.register(com.project.ihealth.dao.po.UserInfo)
+2024-09-05 12:18:39.093 [main] INFO  o.s.w.s.m.method.annotation.RequestMappingHandlerMapping.register:547 - Mapped "{[/user/login],methods=[POST]}" onto public com.project.ihealth.po.RestResponse com.project.ihealth.controller.UserController.login(com.project.ihealth.dao.po.UserInfo)
+2024-09-05 12:18:39.095 [main] INFO  o.s.w.s.m.method.annotation.RequestMappingHandlerMapping.register:547 - Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2024-09-05 12:18:39.095 [main] INFO  o.s.w.s.m.method.annotation.RequestMappingHandlerMapping.register:547 - Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2024-09-05 12:18:39.112 [main] INFO  o.s.web.servlet.handler.SimpleUrlHandlerMapping.registerHandler:373 - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2024-09-05 12:18:39.113 [main] INFO  o.s.web.servlet.handler.SimpleUrlHandlerMapping.registerHandler:373 - Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2024-09-05 12:18:39.141 [main] INFO  o.s.b.a.web.servlet.WelcomePageHandlerMapping.<init>:56 - Adding welcome page: class path resource [views/index.html]
+2024-09-05 12:18:39.293 [main] INFO  o.s.jmx.export.annotation.AnnotationMBeanExporter.afterSingletonsInstantiated:433 - Registering beans for JMX exposure on startup
+2024-09-05 12:18:39.294 [main] INFO  o.s.jmx.export.annotation.AnnotationMBeanExporter.autodetect:895 - Bean with name 'dataSource' has been autodetected for JMX exposure
+2024-09-05 12:18:39.298 [main] INFO  o.s.jmx.export.annotation.AnnotationMBeanExporter.registerBeanInstance:668 - Located MBean 'dataSource': registering with JMX server as MBean [com.alibaba.druid.spring.boot.autoconfigure:name=dataSource,type=DruidDataSourceWrapper]
+2024-09-05 12:18:39.310 [main] INFO  org.apache.coyote.http11.Http11NioProtocol.log:180 - Starting ProtocolHandler ["http-nio-8080"]
+2024-09-05 12:18:39.319 [main] INFO  org.apache.tomcat.util.net.NioSelectorPool.log:180 - Using a shared selector for servlet write/read
+2024-09-05 12:18:39.332 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/ihealth].log:180 - Initializing Spring FrameworkServlet 'dispatcherServlet'
+2024-09-05 12:18:39.332 [main] INFO  org.springframework.web.servlet.DispatcherServlet.initServletBean:494 - FrameworkServlet 'dispatcherServlet': initialization started
+2024-09-05 12:18:39.348 [main] INFO  org.springframework.web.servlet.DispatcherServlet.initServletBean:509 - FrameworkServlet 'dispatcherServlet': initialization completed in 16 ms
+2024-09-05 12:18:39.350 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer.start:206 - Tomcat started on port(s): 8080 (http) with context path '/ihealth'
+2024-09-05 12:18:39.353 [main] INFO  com.project.ihealth.IHealthApplicaiton.logStarted:59 - Started IHealthApplicaiton in 2.139 seconds (JVM running for 3.66)
+2024-09-05 12:22:22.567 [Thread-6] INFO  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext.doClose:993 - Closing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@51fadaff: startup date [Thu Sep 05 12:18:37 CST 2024]; root of context hierarchy
+2024-09-05 12:22:22.570 [Thread-6] INFO  o.s.jmx.export.annotation.AnnotationMBeanExporter.destroy:451 - Unregistering JMX-exposed beans on shutdown
+2024-09-05 12:22:22.571 [Thread-6] INFO  o.s.jmx.export.annotation.AnnotationMBeanExporter.unregisterBeans:183 - Unregistering JMX-exposed beans
+2024-09-05 12:22:22.572 [Thread-6] INFO  com.alibaba.druid.pool.DruidDataSource.close:1948 - {dataSource-1} closing ...
+2024-09-05 12:22:22.573 [Thread-6] INFO  com.alibaba.druid.pool.DruidDataSource.close:2020 - {dataSource-1} closed
+2024-09-05 12:22:25.609 [main] INFO  com.project.ihealth.IHealthApplicaiton.logStarting:50 - Starting IHealthApplicaiton on Lisa-acer with PID 21748 (E:\myProject\i-health\target\classes started by 龙文暇 in E:\myProject\i-health)
+2024-09-05 12:22:25.614 [main] INFO  com.project.ihealth.IHealthApplicaiton.logStartupProfileInfo:659 - No active profile set, falling back to default profiles: default
+2024-09-05 12:22:25.661 [main] INFO  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext.prepareRefresh:590 - Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@31ff43be: startup date [Thu Sep 05 12:22:25 CST 2024]; root of context hierarchy
+2024-09-05 12:22:26.455 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer.initialize:91 - Tomcat initialized with port(s): 8080 (http)
+2024-09-05 12:22:26.464 [main] INFO  org.apache.coyote.http11.Http11NioProtocol.log:180 - Initializing ProtocolHandler ["http-nio-8080"]
+2024-09-05 12:22:26.472 [main] INFO  org.apache.catalina.core.StandardService.log:180 - Starting service [Tomcat]
+2024-09-05 12:22:26.473 [main] INFO  org.apache.catalina.core.StandardEngine.log:180 - Starting Servlet Engine: Apache Tomcat/8.5.29
+2024-09-05 12:22:26.477 [localhost-startStop-1] INFO  org.apache.catalina.core.AprLifecycleListener.log:180 - The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [E:\idea&support\jdk-8u\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\Program Files\MySQL\MySQL Server 8.0\bin;E:\idea&support\jdk-8u\bin;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;D:\app\QQPCMgr\python;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\WINDOWS\system32;E:\BaiduNetdiskDownload\Microsoft VS Code\bin;E:\idea&support\mysql\mysql-8.0.22-winx64\bin;C:\Program Files\Git\cmd;E:\xshell\;E:\Xftp\;E:\;D:\QLDownload\Scripts\;D:\QLDownload\;D:\app\anaconda3;D:\app\anaconda3\Library\mingw-w64\bin;D:\app\anaconda3\Library\usr\bin;D:\app\anaconda3\Library\bin;D:\app\anaconda3\Scripts;D:\app\QQPCMgr\python\Scripts\;D:\app\QQPCMgr\python\;C:\Users\龙文暇\AppData\Local\Microsoft\WindowsApps;;d:\py\Pycharm2021.2.4\bin;;.]
+2024-09-05 12:22:26.537 [localhost-startStop-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/ihealth].log:180 - Initializing Spring embedded WebApplicationContext
+2024-09-05 12:22:26.537 [localhost-startStop-1] INFO  org.springframework.web.context.ContextLoader.prepareWebApplicationContext:285 - Root WebApplicationContext: initialization completed in 876 ms
+2024-09-05 12:22:26.659 [localhost-startStop-1] INFO  o.s.boot.web.servlet.ServletRegistrationBean.addRegistration:185 - Servlet dispatcherServlet mapped to [/]
+2024-09-05 12:22:26.662 [localhost-startStop-1] INFO  o.s.boot.web.servlet.FilterRegistrationBean.configure:244 - Mapping filter: 'characterEncodingFilter' to: [/*]
+2024-09-05 12:22:26.663 [localhost-startStop-1] INFO  o.s.boot.web.servlet.FilterRegistrationBean.configure:244 - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2024-09-05 12:22:26.663 [localhost-startStop-1] INFO  o.s.boot.web.servlet.FilterRegistrationBean.configure:244 - Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2024-09-05 12:22:26.664 [localhost-startStop-1] INFO  o.s.boot.web.servlet.FilterRegistrationBean.configure:244 - Mapping filter: 'requestContextFilter' to: [/*]
+2024-09-05 12:22:26.755 [main] INFO  c.a.d.s.boot.autoconfigure.DruidDataSourceAutoConfigure.dataSource:56 - Init DruidDataSource
+2024-09-05 12:22:26.821 [main] INFO  com.alibaba.druid.pool.DruidDataSource.init:1003 - {dataSource-1} inited
+2024-09-05 12:22:27.044 [main] INFO  o.s.web.servlet.handler.SimpleUrlHandlerMapping.registerHandler:373 - Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2024-09-05 12:22:27.252 [main] INFO  o.s.w.s.m.method.annotation.RequestMappingHandlerAdapter.initControllerAdviceCache:574 - Looking for @ControllerAdvice: org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@31ff43be: startup date [Thu Sep 05 12:22:25 CST 2024]; root of context hierarchy
+2024-09-05 12:22:27.297 [main] INFO  o.s.w.s.m.method.annotation.RequestMappingHandlerMapping.register:547 - Mapped "{[/collection/saveResult],methods=[POST]}" onto public java.lang.Object com.project.ihealth.controller.CollectionController.saveDoctorRecommendation(com.project.ihealth.dao.po.CollectionEntry)
+2024-09-05 12:22:27.298 [main] INFO  o.s.w.s.m.method.annotation.RequestMappingHandlerMapping.register:547 - Mapped "{[/collection/save],methods=[POST]}" onto public com.project.ihealth.po.RestResponse<java.lang.Long> com.project.ihealth.controller.CollectionController.saveCollection(com.project.ihealth.dao.po.CollectionEntry)
+2024-09-05 12:22:27.300 [main] INFO  o.s.w.s.m.method.annotation.RequestMappingHandlerMapping.register:547 - Mapped "{[/user/register],methods=[POST]}" onto public com.project.ihealth.po.RestResponse com.project.ihealth.controller.UserController.register(com.project.ihealth.dao.po.UserInfo)
+2024-09-05 12:22:27.300 [main] INFO  o.s.w.s.m.method.annotation.RequestMappingHandlerMapping.register:547 - Mapped "{[/user/login],methods=[POST]}" onto public com.project.ihealth.po.RestResponse com.project.ihealth.controller.UserController.login(com.project.ihealth.dao.po.UserInfo)
+2024-09-05 12:22:27.302 [main] INFO  o.s.w.s.m.method.annotation.RequestMappingHandlerMapping.register:547 - Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2024-09-05 12:22:27.303 [main] INFO  o.s.w.s.m.method.annotation.RequestMappingHandlerMapping.register:547 - Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2024-09-05 12:22:27.322 [main] INFO  o.s.web.servlet.handler.SimpleUrlHandlerMapping.registerHandler:373 - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2024-09-05 12:22:27.322 [main] INFO  o.s.web.servlet.handler.SimpleUrlHandlerMapping.registerHandler:373 - Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2024-09-05 12:22:27.353 [main] INFO  o.s.b.a.web.servlet.WelcomePageHandlerMapping.<init>:56 - Adding welcome page: class path resource [views/index.html]
+2024-09-05 12:22:27.520 [main] INFO  o.s.jmx.export.annotation.AnnotationMBeanExporter.afterSingletonsInstantiated:433 - Registering beans for JMX exposure on startup
+2024-09-05 12:22:27.521 [main] INFO  o.s.jmx.export.annotation.AnnotationMBeanExporter.autodetect:895 - Bean with name 'dataSource' has been autodetected for JMX exposure
+2024-09-05 12:22:27.526 [main] INFO  o.s.jmx.export.annotation.AnnotationMBeanExporter.registerBeanInstance:668 - Located MBean 'dataSource': registering with JMX server as MBean [com.alibaba.druid.spring.boot.autoconfigure:name=dataSource,type=DruidDataSourceWrapper]
+2024-09-05 12:22:27.538 [main] INFO  org.apache.coyote.http11.Http11NioProtocol.log:180 - Starting ProtocolHandler ["http-nio-8080"]
+2024-09-05 12:22:27.548 [main] INFO  org.apache.tomcat.util.net.NioSelectorPool.log:180 - Using a shared selector for servlet write/read
+2024-09-05 12:22:27.561 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/ihealth].log:180 - Initializing Spring FrameworkServlet 'dispatcherServlet'
+2024-09-05 12:22:27.561 [main] INFO  org.springframework.web.servlet.DispatcherServlet.initServletBean:494 - FrameworkServlet 'dispatcherServlet': initialization started
+2024-09-05 12:22:27.576 [main] INFO  org.springframework.web.servlet.DispatcherServlet.initServletBean:509 - FrameworkServlet 'dispatcherServlet': initialization completed in 15 ms
+2024-09-05 12:22:27.577 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer.start:206 - Tomcat started on port(s): 8080 (http) with context path '/ihealth'
+2024-09-05 12:22:27.580 [main] INFO  com.project.ihealth.IHealthApplicaiton.logStarted:59 - Started IHealthApplicaiton in 2.285 seconds (JVM running for 3.72)
+2024-09-05 12:24:39.768 [Thread-7] INFO  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext.doClose:993 - Closing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@31ff43be: startup date [Thu Sep 05 12:22:25 CST 2024]; root of context hierarchy
+2024-09-05 12:24:39.771 [Thread-7] INFO  o.s.jmx.export.annotation.AnnotationMBeanExporter.destroy:451 - Unregistering JMX-exposed beans on shutdown
+2024-09-05 12:24:39.772 [Thread-7] INFO  o.s.jmx.export.annotation.AnnotationMBeanExporter.unregisterBeans:183 - Unregistering JMX-exposed beans
+2024-09-05 12:24:39.773 [Thread-7] INFO  com.alibaba.druid.pool.DruidDataSource.close:1948 - {dataSource-1} closing ...
+2024-09-05 12:24:39.775 [Thread-7] INFO  com.alibaba.druid.pool.DruidDataSource.close:2020 - {dataSource-1} closed
+2024-09-05 12:24:44.588 [main] INFO  com.project.ihealth.IHealthApplicaiton.logStarting:50 - Starting IHealthApplicaiton on Lisa-acer with PID 28000 (E:\myProject\i-health\target\classes started by 龙文暇 in E:\myProject\i-health)
+2024-09-05 12:24:44.592 [main] INFO  com.project.ihealth.IHealthApplicaiton.logStartupProfileInfo:659 - No active profile set, falling back to default profiles: default
+2024-09-05 12:24:44.630 [main] INFO  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext.prepareRefresh:590 - Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@21ba0741: startup date [Thu Sep 05 12:24:44 CST 2024]; root of context hierarchy
+2024-09-05 12:24:45.359 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer.initialize:91 - Tomcat initialized with port(s): 8080 (http)
+2024-09-05 12:24:45.371 [main] INFO  org.apache.coyote.http11.Http11NioProtocol.log:180 - Initializing ProtocolHandler ["http-nio-8080"]
+2024-09-05 12:24:45.378 [main] INFO  org.apache.catalina.core.StandardService.log:180 - Starting service [Tomcat]
+2024-09-05 12:24:45.378 [main] INFO  org.apache.catalina.core.StandardEngine.log:180 - Starting Servlet Engine: Apache Tomcat/8.5.29
+2024-09-05 12:24:45.382 [localhost-startStop-1] INFO  org.apache.catalina.core.AprLifecycleListener.log:180 - The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [E:\idea&support\jdk-8u\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\Program Files\MySQL\MySQL Server 8.0\bin;E:\idea&support\jdk-8u\bin;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;D:\app\QQPCMgr\python;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\WINDOWS\system32;E:\BaiduNetdiskDownload\Microsoft VS Code\bin;E:\idea&support\mysql\mysql-8.0.22-winx64\bin;C:\Program Files\Git\cmd;E:\xshell\;E:\Xftp\;E:\;D:\QLDownload\Scripts\;D:\QLDownload\;D:\app\anaconda3;D:\app\anaconda3\Library\mingw-w64\bin;D:\app\anaconda3\Library\usr\bin;D:\app\anaconda3\Library\bin;D:\app\anaconda3\Scripts;D:\app\QQPCMgr\python\Scripts\;D:\app\QQPCMgr\python\;C:\Users\龙文暇\AppData\Local\Microsoft\WindowsApps;;d:\py\Pycharm2021.2.4\bin;;.]
+2024-09-05 12:24:45.442 [localhost-startStop-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/ihealth].log:180 - Initializing Spring embedded WebApplicationContext
+2024-09-05 12:24:45.442 [localhost-startStop-1] INFO  org.springframework.web.context.ContextLoader.prepareWebApplicationContext:285 - Root WebApplicationContext: initialization completed in 812 ms
+2024-09-05 12:24:45.544 [localhost-startStop-1] INFO  o.s.boot.web.servlet.ServletRegistrationBean.addRegistration:185 - Servlet dispatcherServlet mapped to [/]
+2024-09-05 12:24:45.549 [localhost-startStop-1] INFO  o.s.boot.web.servlet.FilterRegistrationBean.configure:244 - Mapping filter: 'characterEncodingFilter' to: [/*]
+2024-09-05 12:24:45.550 [localhost-startStop-1] INFO  o.s.boot.web.servlet.FilterRegistrationBean.configure:244 - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2024-09-05 12:24:45.550 [localhost-startStop-1] INFO  o.s.boot.web.servlet.FilterRegistrationBean.configure:244 - Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2024-09-05 12:24:45.550 [localhost-startStop-1] INFO  o.s.boot.web.servlet.FilterRegistrationBean.configure:244 - Mapping filter: 'requestContextFilter' to: [/*]
+2024-09-05 12:24:45.642 [main] INFO  c.a.d.s.boot.autoconfigure.DruidDataSourceAutoConfigure.dataSource:56 - Init DruidDataSource
+2024-09-05 12:24:45.710 [main] INFO  com.alibaba.druid.pool.DruidDataSource.init:1003 - {dataSource-1} inited
+2024-09-05 12:24:45.929 [main] INFO  o.s.web.servlet.handler.SimpleUrlHandlerMapping.registerHandler:373 - Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2024-09-05 12:24:46.071 [main] INFO  o.s.w.s.m.method.annotation.RequestMappingHandlerAdapter.initControllerAdviceCache:574 - Looking for @ControllerAdvice: org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@21ba0741: startup date [Thu Sep 05 12:24:44 CST 2024]; root of context hierarchy
+2024-09-05 12:24:46.110 [main] INFO  o.s.w.s.m.method.annotation.RequestMappingHandlerMapping.register:547 - Mapped "{[/collection/saveResult],methods=[POST]}" onto public java.lang.Object com.project.ihealth.controller.CollectionController.saveDoctorRecommendation(com.project.ihealth.dao.po.CollectionEntry)
+2024-09-05 12:24:46.111 [main] INFO  o.s.w.s.m.method.annotation.RequestMappingHandlerMapping.register:547 - Mapped "{[/collection/save],methods=[POST]}" onto public com.project.ihealth.po.RestResponse<java.lang.Long> com.project.ihealth.controller.CollectionController.saveCollection(com.project.ihealth.dao.po.CollectionEntry)
+2024-09-05 12:24:46.111 [main] INFO  o.s.w.s.m.method.annotation.RequestMappingHandlerMapping.register:547 - Mapped "{[/user/register],methods=[POST]}" onto public com.project.ihealth.po.RestResponse com.project.ihealth.controller.UserController.register(com.project.ihealth.dao.po.UserInfo)
+2024-09-05 12:24:46.112 [main] INFO  o.s.w.s.m.method.annotation.RequestMappingHandlerMapping.register:547 - Mapped "{[/user/login],methods=[POST]}" onto public com.project.ihealth.po.RestResponse com.project.ihealth.controller.UserController.login(com.project.ihealth.dao.po.UserInfo)
+2024-09-05 12:24:46.113 [main] INFO  o.s.w.s.m.method.annotation.RequestMappingHandlerMapping.register:547 - Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2024-09-05 12:24:46.114 [main] INFO  o.s.w.s.m.method.annotation.RequestMappingHandlerMapping.register:547 - Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2024-09-05 12:24:46.129 [main] INFO  o.s.web.servlet.handler.SimpleUrlHandlerMapping.registerHandler:373 - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2024-09-05 12:24:46.129 [main] INFO  o.s.web.servlet.handler.SimpleUrlHandlerMapping.registerHandler:373 - Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2024-09-05 12:24:46.160 [main] INFO  o.s.b.a.web.servlet.WelcomePageHandlerMapping.<init>:56 - Adding welcome page: class path resource [views/index.html]
+2024-09-05 12:24:46.329 [main] INFO  o.s.jmx.export.annotation.AnnotationMBeanExporter.afterSingletonsInstantiated:433 - Registering beans for JMX exposure on startup
+2024-09-05 12:24:46.330 [main] INFO  o.s.jmx.export.annotation.AnnotationMBeanExporter.autodetect:895 - Bean with name 'dataSource' has been autodetected for JMX exposure
+2024-09-05 12:24:46.333 [main] INFO  o.s.jmx.export.annotation.AnnotationMBeanExporter.registerBeanInstance:668 - Located MBean 'dataSource': registering with JMX server as MBean [com.alibaba.druid.spring.boot.autoconfigure:name=dataSource,type=DruidDataSourceWrapper]
+2024-09-05 12:24:46.342 [main] INFO  org.apache.coyote.http11.Http11NioProtocol.log:180 - Starting ProtocolHandler ["http-nio-8080"]
+2024-09-05 12:24:46.348 [main] INFO  org.apache.tomcat.util.net.NioSelectorPool.log:180 - Using a shared selector for servlet write/read
+2024-09-05 12:24:46.358 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/ihealth].log:180 - Initializing Spring FrameworkServlet 'dispatcherServlet'
+2024-09-05 12:24:46.358 [main] INFO  org.springframework.web.servlet.DispatcherServlet.initServletBean:494 - FrameworkServlet 'dispatcherServlet': initialization started
+2024-09-05 12:24:46.372 [main] INFO  org.springframework.web.servlet.DispatcherServlet.initServletBean:509 - FrameworkServlet 'dispatcherServlet': initialization completed in 14 ms
+2024-09-05 12:24:46.373 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer.start:206 - Tomcat started on port(s): 8080 (http) with context path '/ihealth'
+2024-09-05 12:24:46.376 [main] INFO  com.project.ihealth.IHealthApplicaiton.logStarted:59 - Started IHealthApplicaiton in 1.999 seconds (JVM running for 3.062)
+2024-09-05 12:25:29.743 [http-nio-8080-exec-1] INFO  org.apache.coyote.http11.Http11Processor.log:182 - Error parsing HTTP request header
+ Note: further occurrences of HTTP header parsing errors will be logged at DEBUG level.
+java.lang.IllegalArgumentException: Request header is too large
+	at org.apache.coyote.http11.Http11InputBuffer.fill(Http11InputBuffer.java:706)
+	at org.apache.coyote.http11.Http11InputBuffer.parseHeader(Http11InputBuffer.java:853)
+	at org.apache.coyote.http11.Http11InputBuffer.parseHeaders(Http11InputBuffer.java:565)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:703)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:790)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1459)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+2024-09-05 12:25:49.411 [http-nio-8080-exec-10] INFO  org.apache.coyote.http11.Http11Processor.log:182 - Error parsing HTTP request header
+ Note: further occurrences of HTTP header parsing errors will be logged at DEBUG level.
+java.lang.IllegalArgumentException: Request header is too large
+	at org.apache.coyote.http11.Http11InputBuffer.fill(Http11InputBuffer.java:706)
+	at org.apache.coyote.http11.Http11InputBuffer.parseHeader(Http11InputBuffer.java:781)
+	at org.apache.coyote.http11.Http11InputBuffer.parseHeaders(Http11InputBuffer.java:565)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:703)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:790)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1459)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+2024-09-05 12:44:21.234 [Thread-6] INFO  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext.doClose:993 - Closing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@21ba0741: startup date [Thu Sep 05 12:24:44 CST 2024]; root of context hierarchy
+2024-09-05 12:44:21.237 [Thread-6] INFO  o.s.jmx.export.annotation.AnnotationMBeanExporter.destroy:451 - Unregistering JMX-exposed beans on shutdown
+2024-09-05 12:44:21.237 [Thread-6] INFO  o.s.jmx.export.annotation.AnnotationMBeanExporter.unregisterBeans:183 - Unregistering JMX-exposed beans
+2024-09-05 12:44:21.238 [Thread-6] INFO  com.alibaba.druid.pool.DruidDataSource.close:1948 - {dataSource-1} closing ...
+2024-09-05 12:44:21.239 [Thread-6] INFO  com.alibaba.druid.pool.DruidDataSource.close:2020 - {dataSource-1} closed
+2024-09-05 12:44:24.550 [main] INFO  com.project.ihealth.IHealthApplicaiton.logStarting:50 - Starting IHealthApplicaiton on Lisa-acer with PID 31056 (E:\myProject\i-health\target\classes started by 龙文暇 in E:\myProject\i-health)
+2024-09-05 12:44:24.554 [main] INFO  com.project.ihealth.IHealthApplicaiton.logStartupProfileInfo:659 - No active profile set, falling back to default profiles: default
+2024-09-05 12:44:24.604 [main] INFO  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext.prepareRefresh:590 - Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@56673b2c: startup date [Thu Sep 05 12:44:24 CST 2024]; root of context hierarchy
+2024-09-05 12:44:25.345 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer.initialize:91 - Tomcat initialized with port(s): 8080 (http)
+2024-09-05 12:44:25.355 [main] INFO  org.apache.coyote.http11.Http11NioProtocol.log:180 - Initializing ProtocolHandler ["http-nio-8080"]
+2024-09-05 12:44:25.362 [main] INFO  org.apache.catalina.core.StandardService.log:180 - Starting service [Tomcat]
+2024-09-05 12:44:25.362 [main] INFO  org.apache.catalina.core.StandardEngine.log:180 - Starting Servlet Engine: Apache Tomcat/8.5.29
+2024-09-05 12:44:25.366 [localhost-startStop-1] INFO  org.apache.catalina.core.AprLifecycleListener.log:180 - The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [E:\idea&support\jdk-8u\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\Program Files\MySQL\MySQL Server 8.0\bin;E:\idea&support\jdk-8u\bin;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;D:\app\QQPCMgr\python;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\WINDOWS\system32;E:\BaiduNetdiskDownload\Microsoft VS Code\bin;E:\idea&support\mysql\mysql-8.0.22-winx64\bin;C:\Program Files\Git\cmd;E:\xshell\;E:\Xftp\;E:\;D:\QLDownload\Scripts\;D:\QLDownload\;D:\app\anaconda3;D:\app\anaconda3\Library\mingw-w64\bin;D:\app\anaconda3\Library\usr\bin;D:\app\anaconda3\Library\bin;D:\app\anaconda3\Scripts;D:\app\QQPCMgr\python\Scripts\;D:\app\QQPCMgr\python\;C:\Users\龙文暇\AppData\Local\Microsoft\WindowsApps;;d:\py\Pycharm2021.2.4\bin;;.]
+2024-09-05 12:44:25.426 [localhost-startStop-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/ihealth].log:180 - Initializing Spring embedded WebApplicationContext
+2024-09-05 12:44:25.426 [localhost-startStop-1] INFO  org.springframework.web.context.ContextLoader.prepareWebApplicationContext:285 - Root WebApplicationContext: initialization completed in 822 ms
+2024-09-05 12:44:25.525 [localhost-startStop-1] INFO  o.s.boot.web.servlet.ServletRegistrationBean.addRegistration:185 - Servlet dispatcherServlet mapped to [/]
+2024-09-05 12:44:25.530 [localhost-startStop-1] INFO  o.s.boot.web.servlet.FilterRegistrationBean.configure:244 - Mapping filter: 'characterEncodingFilter' to: [/*]
+2024-09-05 12:44:25.531 [localhost-startStop-1] INFO  o.s.boot.web.servlet.FilterRegistrationBean.configure:244 - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2024-09-05 12:44:25.531 [localhost-startStop-1] INFO  o.s.boot.web.servlet.FilterRegistrationBean.configure:244 - Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2024-09-05 12:44:25.531 [localhost-startStop-1] INFO  o.s.boot.web.servlet.FilterRegistrationBean.configure:244 - Mapping filter: 'requestContextFilter' to: [/*]
+2024-09-05 12:44:25.626 [main] INFO  c.a.d.s.boot.autoconfigure.DruidDataSourceAutoConfigure.dataSource:56 - Init DruidDataSource
+2024-09-05 12:44:25.700 [main] INFO  com.alibaba.druid.pool.DruidDataSource.init:1003 - {dataSource-1} inited
+2024-09-05 12:44:25.857 [main] INFO  o.s.web.servlet.handler.SimpleUrlHandlerMapping.registerHandler:373 - Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2024-09-05 12:44:26.047 [main] INFO  o.s.w.s.m.method.annotation.RequestMappingHandlerAdapter.initControllerAdviceCache:574 - Looking for @ControllerAdvice: org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@56673b2c: startup date [Thu Sep 05 12:44:24 CST 2024]; root of context hierarchy
+2024-09-05 12:44:26.090 [main] INFO  o.s.w.s.m.method.annotation.RequestMappingHandlerMapping.register:547 - Mapped "{[/collection/save],methods=[POST]}" onto public com.project.ihealth.po.RestResponse<java.lang.Long> com.project.ihealth.controller.CollectionController.saveCollection(com.project.ihealth.dao.po.CollectionEntry)
+2024-09-05 12:44:26.091 [main] INFO  o.s.w.s.m.method.annotation.RequestMappingHandlerMapping.register:547 - Mapped "{[/collection/saveResult],methods=[POST]}" onto public java.lang.Object com.project.ihealth.controller.CollectionController.saveDoctorRecommendation(com.project.ihealth.dao.po.CollectionEntry)
+2024-09-05 12:44:26.092 [main] INFO  o.s.w.s.m.method.annotation.RequestMappingHandlerMapping.register:547 - Mapped "{[/user/register],methods=[POST]}" onto public com.project.ihealth.po.RestResponse com.project.ihealth.controller.UserController.register(com.project.ihealth.dao.po.UserInfo)
+2024-09-05 12:44:26.093 [main] INFO  o.s.w.s.m.method.annotation.RequestMappingHandlerMapping.register:547 - Mapped "{[/user/login],methods=[POST]}" onto public com.project.ihealth.po.RestResponse com.project.ihealth.controller.UserController.login(com.project.ihealth.dao.po.UserInfo)
+2024-09-05 12:44:26.094 [main] INFO  o.s.w.s.m.method.annotation.RequestMappingHandlerMapping.register:547 - Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2024-09-05 12:44:26.095 [main] INFO  o.s.w.s.m.method.annotation.RequestMappingHandlerMapping.register:547 - Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2024-09-05 12:44:26.113 [main] INFO  o.s.web.servlet.handler.SimpleUrlHandlerMapping.registerHandler:373 - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2024-09-05 12:44:26.113 [main] INFO  o.s.web.servlet.handler.SimpleUrlHandlerMapping.registerHandler:373 - Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2024-09-05 12:44:26.140 [main] INFO  o.s.b.a.web.servlet.WelcomePageHandlerMapping.<init>:56 - Adding welcome page: class path resource [views/index.html]
+2024-09-05 12:44:26.280 [main] INFO  o.s.jmx.export.annotation.AnnotationMBeanExporter.afterSingletonsInstantiated:433 - Registering beans for JMX exposure on startup
+2024-09-05 12:44:26.280 [main] INFO  o.s.jmx.export.annotation.AnnotationMBeanExporter.autodetect:895 - Bean with name 'dataSource' has been autodetected for JMX exposure
+2024-09-05 12:44:26.284 [main] INFO  o.s.jmx.export.annotation.AnnotationMBeanExporter.registerBeanInstance:668 - Located MBean 'dataSource': registering with JMX server as MBean [com.alibaba.druid.spring.boot.autoconfigure:name=dataSource,type=DruidDataSourceWrapper]
+2024-09-05 12:44:26.294 [main] INFO  org.apache.coyote.http11.Http11NioProtocol.log:180 - Starting ProtocolHandler ["http-nio-8080"]
+2024-09-05 12:44:26.302 [main] INFO  org.apache.tomcat.util.net.NioSelectorPool.log:180 - Using a shared selector for servlet write/read
+2024-09-05 12:44:26.312 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/ihealth].log:180 - Initializing Spring FrameworkServlet 'dispatcherServlet'
+2024-09-05 12:44:26.314 [main] INFO  org.springframework.web.servlet.DispatcherServlet.initServletBean:494 - FrameworkServlet 'dispatcherServlet': initialization started
+2024-09-05 12:44:26.326 [main] INFO  org.springframework.web.servlet.DispatcherServlet.initServletBean:509 - FrameworkServlet 'dispatcherServlet': initialization completed in 12 ms
+2024-09-05 12:44:26.328 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer.start:206 - Tomcat started on port(s): 8080 (http) with context path '/ihealth'
+2024-09-05 12:44:26.334 [main] INFO  com.project.ihealth.IHealthApplicaiton.logStarted:59 - Started IHealthApplicaiton in 1.996 seconds (JVM running for 3.055)
+2024-09-05 12:47:03.496 [http-nio-8080-exec-4] INFO  org.apache.coyote.http11.Http11Processor.log:182 - Error parsing HTTP request header
+ Note: further occurrences of HTTP header parsing errors will be logged at DEBUG level.
+java.lang.IllegalArgumentException: Request header is too large
+	at org.apache.coyote.http11.Http11InputBuffer.fill(Http11InputBuffer.java:706)
+	at org.apache.coyote.http11.Http11InputBuffer.parseHeader(Http11InputBuffer.java:853)
+	at org.apache.coyote.http11.Http11InputBuffer.parseHeaders(Http11InputBuffer.java:565)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:703)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:790)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1459)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+2024-09-05 12:49:44.437 [http-nio-8080-exec-2] INFO  org.apache.coyote.http11.Http11Processor.log:182 - Error parsing HTTP request header
+ Note: further occurrences of HTTP header parsing errors will be logged at DEBUG level.
+java.lang.IllegalArgumentException: Request header is too large
+	at org.apache.coyote.http11.Http11InputBuffer.fill(Http11InputBuffer.java:706)
+	at org.apache.coyote.http11.Http11InputBuffer.parseHeader(Http11InputBuffer.java:853)
+	at org.apache.coyote.http11.Http11InputBuffer.parseHeaders(Http11InputBuffer.java:565)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:703)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:790)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1459)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+2024-09-05 12:50:31.021 [Thread-6] INFO  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext.doClose:993 - Closing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@56673b2c: startup date [Thu Sep 05 12:44:24 CST 2024]; root of context hierarchy
+2024-09-05 12:50:31.024 [Thread-6] INFO  o.s.jmx.export.annotation.AnnotationMBeanExporter.destroy:451 - Unregistering JMX-exposed beans on shutdown
+2024-09-05 12:50:31.025 [Thread-6] INFO  o.s.jmx.export.annotation.AnnotationMBeanExporter.unregisterBeans:183 - Unregistering JMX-exposed beans
+2024-09-05 12:50:31.026 [Thread-6] INFO  com.alibaba.druid.pool.DruidDataSource.close:1948 - {dataSource-1} closing ...
+2024-09-05 12:50:31.027 [Thread-6] INFO  com.alibaba.druid.pool.DruidDataSource.close:2020 - {dataSource-1} closed
+2024-09-05 12:50:34.644 [main] INFO  com.project.ihealth.IHealthApplicaiton.logStarting:50 - Starting IHealthApplicaiton on Lisa-acer with PID 28432 (E:\myProject\i-health\target\classes started by 龙文暇 in E:\myProject\i-health)
+2024-09-05 12:50:34.649 [main] INFO  com.project.ihealth.IHealthApplicaiton.logStartupProfileInfo:659 - No active profile set, falling back to default profiles: default
+2024-09-05 12:50:34.695 [main] INFO  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext.prepareRefresh:590 - Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@67d18ed7: startup date [Thu Sep 05 12:50:34 CST 2024]; root of context hierarchy
+2024-09-05 12:50:35.478 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer.initialize:91 - Tomcat initialized with port(s): 8080 (http)
+2024-09-05 12:50:35.488 [main] INFO  org.apache.coyote.http11.Http11NioProtocol.log:180 - Initializing ProtocolHandler ["http-nio-8080"]
+2024-09-05 12:50:35.496 [main] INFO  org.apache.catalina.core.StandardService.log:180 - Starting service [Tomcat]
+2024-09-05 12:50:35.496 [main] INFO  org.apache.catalina.core.StandardEngine.log:180 - Starting Servlet Engine: Apache Tomcat/8.5.29
+2024-09-05 12:50:35.500 [localhost-startStop-1] INFO  org.apache.catalina.core.AprLifecycleListener.log:180 - The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [E:\idea&support\jdk-8u\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\Program Files\MySQL\MySQL Server 8.0\bin;E:\idea&support\jdk-8u\bin;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;D:\app\QQPCMgr\python;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\WINDOWS\system32;E:\BaiduNetdiskDownload\Microsoft VS Code\bin;E:\idea&support\mysql\mysql-8.0.22-winx64\bin;C:\Program Files\Git\cmd;E:\xshell\;E:\Xftp\;E:\;D:\QLDownload\Scripts\;D:\QLDownload\;D:\app\anaconda3;D:\app\anaconda3\Library\mingw-w64\bin;D:\app\anaconda3\Library\usr\bin;D:\app\anaconda3\Library\bin;D:\app\anaconda3\Scripts;D:\app\QQPCMgr\python\Scripts\;D:\app\QQPCMgr\python\;C:\Users\龙文暇\AppData\Local\Microsoft\WindowsApps;;d:\py\Pycharm2021.2.4\bin;;.]
+2024-09-05 12:50:35.574 [localhost-startStop-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/ihealth].log:180 - Initializing Spring embedded WebApplicationContext
+2024-09-05 12:50:35.574 [localhost-startStop-1] INFO  org.springframework.web.context.ContextLoader.prepareWebApplicationContext:285 - Root WebApplicationContext: initialization completed in 879 ms
+2024-09-05 12:50:35.677 [localhost-startStop-1] INFO  o.s.boot.web.servlet.ServletRegistrationBean.addRegistration:185 - Servlet dispatcherServlet mapped to [/]
+2024-09-05 12:50:35.681 [localhost-startStop-1] INFO  o.s.boot.web.servlet.FilterRegistrationBean.configure:244 - Mapping filter: 'characterEncodingFilter' to: [/*]
+2024-09-05 12:50:35.681 [localhost-startStop-1] INFO  o.s.boot.web.servlet.FilterRegistrationBean.configure:244 - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2024-09-05 12:50:35.681 [localhost-startStop-1] INFO  o.s.boot.web.servlet.FilterRegistrationBean.configure:244 - Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2024-09-05 12:50:35.681 [localhost-startStop-1] INFO  o.s.boot.web.servlet.FilterRegistrationBean.configure:244 - Mapping filter: 'requestContextFilter' to: [/*]
+2024-09-05 12:50:35.781 [main] INFO  c.a.d.s.boot.autoconfigure.DruidDataSourceAutoConfigure.dataSource:56 - Init DruidDataSource
+2024-09-05 12:50:35.857 [main] INFO  com.alibaba.druid.pool.DruidDataSource.init:1003 - {dataSource-1} inited
+2024-09-05 12:50:36.028 [main] INFO  o.s.web.servlet.handler.SimpleUrlHandlerMapping.registerHandler:373 - Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2024-09-05 12:50:36.215 [main] INFO  o.s.w.s.m.method.annotation.RequestMappingHandlerAdapter.initControllerAdviceCache:574 - Looking for @ControllerAdvice: org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@67d18ed7: startup date [Thu Sep 05 12:50:34 CST 2024]; root of context hierarchy
+2024-09-05 12:50:36.255 [main] INFO  o.s.w.s.m.method.annotation.RequestMappingHandlerMapping.register:547 - Mapped "{[/collection/save],methods=[POST]}" onto public com.project.ihealth.po.RestResponse<java.lang.Long> com.project.ihealth.controller.CollectionController.saveCollection(com.project.ihealth.dao.po.CollectionEntry)
+2024-09-05 12:50:36.256 [main] INFO  o.s.w.s.m.method.annotation.RequestMappingHandlerMapping.register:547 - Mapped "{[/collection/saveResult],methods=[POST]}" onto public java.lang.Object com.project.ihealth.controller.CollectionController.saveDoctorRecommendation(com.project.ihealth.dao.po.CollectionEntry)
+2024-09-05 12:50:36.256 [main] INFO  o.s.w.s.m.method.annotation.RequestMappingHandlerMapping.register:547 - Mapped "{[/user/register],methods=[POST]}" onto public com.project.ihealth.po.RestResponse com.project.ihealth.controller.UserController.register(com.project.ihealth.dao.po.UserInfo)
+2024-09-05 12:50:36.257 [main] INFO  o.s.w.s.m.method.annotation.RequestMappingHandlerMapping.register:547 - Mapped "{[/user/login],methods=[POST]}" onto public com.project.ihealth.po.RestResponse com.project.ihealth.controller.UserController.login(com.project.ihealth.dao.po.UserInfo)
+2024-09-05 12:50:36.259 [main] INFO  o.s.w.s.m.method.annotation.RequestMappingHandlerMapping.register:547 - Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2024-09-05 12:50:36.259 [main] INFO  o.s.w.s.m.method.annotation.RequestMappingHandlerMapping.register:547 - Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2024-09-05 12:50:36.283 [main] INFO  o.s.web.servlet.handler.SimpleUrlHandlerMapping.registerHandler:373 - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2024-09-05 12:50:36.283 [main] INFO  o.s.web.servlet.handler.SimpleUrlHandlerMapping.registerHandler:373 - Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2024-09-05 12:50:36.314 [main] INFO  o.s.b.a.web.servlet.WelcomePageHandlerMapping.<init>:56 - Adding welcome page: class path resource [views/index.html]
+2024-09-05 12:50:36.492 [main] INFO  o.s.jmx.export.annotation.AnnotationMBeanExporter.afterSingletonsInstantiated:433 - Registering beans for JMX exposure on startup
+2024-09-05 12:50:36.494 [main] INFO  o.s.jmx.export.annotation.AnnotationMBeanExporter.autodetect:895 - Bean with name 'dataSource' has been autodetected for JMX exposure
+2024-09-05 12:50:36.500 [main] INFO  o.s.jmx.export.annotation.AnnotationMBeanExporter.registerBeanInstance:668 - Located MBean 'dataSource': registering with JMX server as MBean [com.alibaba.druid.spring.boot.autoconfigure:name=dataSource,type=DruidDataSourceWrapper]
+2024-09-05 12:50:36.512 [main] INFO  org.apache.coyote.http11.Http11NioProtocol.log:180 - Starting ProtocolHandler ["http-nio-8080"]
+2024-09-05 12:50:36.521 [main] INFO  org.apache.tomcat.util.net.NioSelectorPool.log:180 - Using a shared selector for servlet write/read
+2024-09-05 12:50:36.533 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/ihealth].log:180 - Initializing Spring FrameworkServlet 'dispatcherServlet'
+2024-09-05 12:50:36.534 [main] INFO  org.springframework.web.servlet.DispatcherServlet.initServletBean:494 - FrameworkServlet 'dispatcherServlet': initialization started
+2024-09-05 12:50:36.550 [main] INFO  org.springframework.web.servlet.DispatcherServlet.initServletBean:509 - FrameworkServlet 'dispatcherServlet': initialization completed in 16 ms
+2024-09-05 12:50:36.553 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer.start:206 - Tomcat started on port(s): 8080 (http) with context path '/ihealth'
+2024-09-05 12:50:36.556 [main] INFO  com.project.ihealth.IHealthApplicaiton.logStarted:59 - Started IHealthApplicaiton in 2.199 seconds (JVM running for 3.282)
+2024-09-05 12:51:50.386 [Thread-6] INFO  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext.doClose:993 - Closing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@67d18ed7: startup date [Thu Sep 05 12:50:34 CST 2024]; root of context hierarchy
+2024-09-05 12:51:50.389 [Thread-6] INFO  o.s.jmx.export.annotation.AnnotationMBeanExporter.destroy:451 - Unregistering JMX-exposed beans on shutdown
+2024-09-05 12:51:50.389 [Thread-6] INFO  o.s.jmx.export.annotation.AnnotationMBeanExporter.unregisterBeans:183 - Unregistering JMX-exposed beans
+2024-09-05 12:51:50.390 [Thread-6] INFO  com.alibaba.druid.pool.DruidDataSource.close:1948 - {dataSource-1} closing ...
+2024-09-05 12:51:50.391 [Thread-6] INFO  com.alibaba.druid.pool.DruidDataSource.close:2020 - {dataSource-1} closed
+2024-09-05 12:51:53.879 [main] INFO  com.project.ihealth.IHealthApplicaiton.logStarting:50 - Starting IHealthApplicaiton on Lisa-acer with PID 27568 (E:\myProject\i-health\target\classes started by 龙文暇 in E:\myProject\i-health)
+2024-09-05 12:51:53.883 [main] INFO  com.project.ihealth.IHealthApplicaiton.logStartupProfileInfo:659 - No active profile set, falling back to default profiles: default
+2024-09-05 12:51:53.923 [main] INFO  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext.prepareRefresh:590 - Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@51fadaff: startup date [Thu Sep 05 12:51:53 CST 2024]; root of context hierarchy
+2024-09-05 12:51:54.739 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer.initialize:91 - Tomcat initialized with port(s): 8080 (http)
+2024-09-05 12:51:54.751 [main] INFO  org.apache.coyote.http11.Http11NioProtocol.log:180 - Initializing ProtocolHandler ["http-nio-8080"]
+2024-09-05 12:51:54.760 [main] INFO  org.apache.catalina.core.StandardService.log:180 - Starting service [Tomcat]
+2024-09-05 12:51:54.761 [main] INFO  org.apache.catalina.core.StandardEngine.log:180 - Starting Servlet Engine: Apache Tomcat/8.5.29
+2024-09-05 12:51:54.764 [localhost-startStop-1] INFO  org.apache.catalina.core.AprLifecycleListener.log:180 - The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [E:\idea&support\jdk-8u\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\Program Files\MySQL\MySQL Server 8.0\bin;E:\idea&support\jdk-8u\bin;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;D:\app\QQPCMgr\python;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\WINDOWS\system32;E:\BaiduNetdiskDownload\Microsoft VS Code\bin;E:\idea&support\mysql\mysql-8.0.22-winx64\bin;C:\Program Files\Git\cmd;E:\xshell\;E:\Xftp\;E:\;D:\QLDownload\Scripts\;D:\QLDownload\;D:\app\anaconda3;D:\app\anaconda3\Library\mingw-w64\bin;D:\app\anaconda3\Library\usr\bin;D:\app\anaconda3\Library\bin;D:\app\anaconda3\Scripts;D:\app\QQPCMgr\python\Scripts\;D:\app\QQPCMgr\python\;C:\Users\龙文暇\AppData\Local\Microsoft\WindowsApps;;d:\py\Pycharm2021.2.4\bin;;.]
+2024-09-05 12:51:54.830 [localhost-startStop-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/ihealth].log:180 - Initializing Spring embedded WebApplicationContext
+2024-09-05 12:51:54.830 [localhost-startStop-1] INFO  org.springframework.web.context.ContextLoader.prepareWebApplicationContext:285 - Root WebApplicationContext: initialization completed in 907 ms
+2024-09-05 12:51:54.940 [localhost-startStop-1] INFO  o.s.boot.web.servlet.ServletRegistrationBean.addRegistration:185 - Servlet dispatcherServlet mapped to [/]
+2024-09-05 12:51:54.944 [localhost-startStop-1] INFO  o.s.boot.web.servlet.FilterRegistrationBean.configure:244 - Mapping filter: 'characterEncodingFilter' to: [/*]
+2024-09-05 12:51:54.944 [localhost-startStop-1] INFO  o.s.boot.web.servlet.FilterRegistrationBean.configure:244 - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2024-09-05 12:51:54.945 [localhost-startStop-1] INFO  o.s.boot.web.servlet.FilterRegistrationBean.configure:244 - Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2024-09-05 12:51:54.945 [localhost-startStop-1] INFO  o.s.boot.web.servlet.FilterRegistrationBean.configure:244 - Mapping filter: 'requestContextFilter' to: [/*]
+2024-09-05 12:51:55.032 [main] INFO  c.a.d.s.boot.autoconfigure.DruidDataSourceAutoConfigure.dataSource:56 - Init DruidDataSource
+2024-09-05 12:51:55.095 [main] INFO  com.alibaba.druid.pool.DruidDataSource.init:1003 - {dataSource-1} inited
+2024-09-05 12:51:55.280 [main] INFO  o.s.web.servlet.handler.SimpleUrlHandlerMapping.registerHandler:373 - Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2024-09-05 12:51:55.495 [main] INFO  o.s.w.s.m.method.annotation.RequestMappingHandlerAdapter.initControllerAdviceCache:574 - Looking for @ControllerAdvice: org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@51fadaff: startup date [Thu Sep 05 12:51:53 CST 2024]; root of context hierarchy
+2024-09-05 12:51:55.540 [main] INFO  o.s.w.s.m.method.annotation.RequestMappingHandlerMapping.register:547 - Mapped "{[/collection/save],methods=[POST]}" onto public com.project.ihealth.po.RestResponse<java.lang.Long> com.project.ihealth.controller.CollectionController.saveCollection(com.project.ihealth.dao.po.CollectionEntry)
+2024-09-05 12:51:55.541 [main] INFO  o.s.w.s.m.method.annotation.RequestMappingHandlerMapping.register:547 - Mapped "{[/collection/saveResult],methods=[POST]}" onto public java.lang.Object com.project.ihealth.controller.CollectionController.saveDoctorRecommendation(com.project.ihealth.dao.po.CollectionEntry)
+2024-09-05 12:51:55.542 [main] INFO  o.s.w.s.m.method.annotation.RequestMappingHandlerMapping.register:547 - Mapped "{[/user/register],methods=[POST]}" onto public com.project.ihealth.po.RestResponse com.project.ihealth.controller.UserController.register(com.project.ihealth.dao.po.UserInfo)
+2024-09-05 12:51:55.543 [main] INFO  o.s.w.s.m.method.annotation.RequestMappingHandlerMapping.register:547 - Mapped "{[/user/login],methods=[POST]}" onto public com.project.ihealth.po.RestResponse com.project.ihealth.controller.UserController.login(com.project.ihealth.dao.po.UserInfo)
+2024-09-05 12:51:55.544 [main] INFO  o.s.w.s.m.method.annotation.RequestMappingHandlerMapping.register:547 - Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2024-09-05 12:51:55.545 [main] INFO  o.s.w.s.m.method.annotation.RequestMappingHandlerMapping.register:547 - Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2024-09-05 12:51:55.565 [main] INFO  o.s.web.servlet.handler.SimpleUrlHandlerMapping.registerHandler:373 - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2024-09-05 12:51:55.565 [main] INFO  o.s.web.servlet.handler.SimpleUrlHandlerMapping.registerHandler:373 - Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2024-09-05 12:51:55.594 [main] INFO  o.s.b.a.web.servlet.WelcomePageHandlerMapping.<init>:56 - Adding welcome page: class path resource [views/index.html]
+2024-09-05 12:51:55.758 [main] INFO  o.s.jmx.export.annotation.AnnotationMBeanExporter.afterSingletonsInstantiated:433 - Registering beans for JMX exposure on startup
+2024-09-05 12:51:55.759 [main] INFO  o.s.jmx.export.annotation.AnnotationMBeanExporter.autodetect:895 - Bean with name 'dataSource' has been autodetected for JMX exposure
+2024-09-05 12:51:55.765 [main] INFO  o.s.jmx.export.annotation.AnnotationMBeanExporter.registerBeanInstance:668 - Located MBean 'dataSource': registering with JMX server as MBean [com.alibaba.druid.spring.boot.autoconfigure:name=dataSource,type=DruidDataSourceWrapper]
+2024-09-05 12:51:55.777 [main] INFO  org.apache.coyote.http11.Http11NioProtocol.log:180 - Starting ProtocolHandler ["http-nio-8080"]
+2024-09-05 12:51:55.785 [main] INFO  org.apache.tomcat.util.net.NioSelectorPool.log:180 - Using a shared selector for servlet write/read
+2024-09-05 12:51:55.803 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/ihealth].log:180 - Initializing Spring FrameworkServlet 'dispatcherServlet'
+2024-09-05 12:51:55.803 [main] INFO  org.springframework.web.servlet.DispatcherServlet.initServletBean:494 - FrameworkServlet 'dispatcherServlet': initialization started
+2024-09-05 12:51:55.822 [main] INFO  org.springframework.web.servlet.DispatcherServlet.initServletBean:509 - FrameworkServlet 'dispatcherServlet': initialization completed in 19 ms
+2024-09-05 12:51:55.825 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer.start:206 - Tomcat started on port(s): 8080 (http) with context path '/ihealth'
+2024-09-05 12:51:55.829 [main] INFO  com.project.ihealth.IHealthApplicaiton.logStarted:59 - Started IHealthApplicaiton in 2.207 seconds (JVM running for 3.262)
+2024-09-05 12:52:20.420 [http-nio-8080-exec-6] INFO  org.apache.coyote.http11.Http11Processor.log:182 - Error parsing HTTP request header
+ Note: further occurrences of HTTP header parsing errors will be logged at DEBUG level.
+java.lang.IllegalArgumentException: Request header is too large
+	at org.apache.coyote.http11.Http11InputBuffer.fill(Http11InputBuffer.java:706)
+	at org.apache.coyote.http11.Http11InputBuffer.parseHeader(Http11InputBuffer.java:853)
+	at org.apache.coyote.http11.Http11InputBuffer.parseHeaders(Http11InputBuffer.java:565)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:703)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:790)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1459)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+2024-09-05 12:55:36.944 [Thread-6] INFO  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext.doClose:993 - Closing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@51fadaff: startup date [Thu Sep 05 12:51:53 CST 2024]; root of context hierarchy
+2024-09-05 12:55:36.946 [Thread-6] INFO  o.s.jmx.export.annotation.AnnotationMBeanExporter.destroy:451 - Unregistering JMX-exposed beans on shutdown
+2024-09-05 12:55:36.947 [Thread-6] INFO  o.s.jmx.export.annotation.AnnotationMBeanExporter.unregisterBeans:183 - Unregistering JMX-exposed beans
+2024-09-05 12:55:36.948 [Thread-6] INFO  com.alibaba.druid.pool.DruidDataSource.close:1948 - {dataSource-1} closing ...
+2024-09-05 12:55:36.949 [Thread-6] INFO  com.alibaba.druid.pool.DruidDataSource.close:2020 - {dataSource-1} closed
+2024-09-05 12:55:40.558 [main] INFO  com.project.ihealth.IHealthApplicaiton.logStarting:50 - Starting IHealthApplicaiton on Lisa-acer with PID 25196 (E:\myProject\i-health\target\classes started by 龙文暇 in E:\myProject\i-health)
+2024-09-05 12:55:40.562 [main] INFO  com.project.ihealth.IHealthApplicaiton.logStartupProfileInfo:659 - No active profile set, falling back to default profiles: default
+2024-09-05 12:55:40.599 [main] INFO  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext.prepareRefresh:590 - Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@3f91b517: startup date [Thu Sep 05 12:55:40 CST 2024]; root of context hierarchy
+2024-09-05 12:55:41.391 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer.initialize:91 - Tomcat initialized with port(s): 8080 (http)
+2024-09-05 12:55:41.402 [main] INFO  org.apache.coyote.http11.Http11NioProtocol.log:180 - Initializing ProtocolHandler ["http-nio-8080"]
+2024-09-05 12:55:41.413 [main] INFO  org.apache.catalina.core.StandardService.log:180 - Starting service [Tomcat]
+2024-09-05 12:55:41.413 [main] INFO  org.apache.catalina.core.StandardEngine.log:180 - Starting Servlet Engine: Apache Tomcat/8.5.29
+2024-09-05 12:55:41.417 [localhost-startStop-1] INFO  org.apache.catalina.core.AprLifecycleListener.log:180 - The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [E:\idea&support\jdk-8u\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\Program Files\MySQL\MySQL Server 8.0\bin;E:\idea&support\jdk-8u\bin;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;D:\app\QQPCMgr\python;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\WINDOWS\system32;E:\BaiduNetdiskDownload\Microsoft VS Code\bin;E:\idea&support\mysql\mysql-8.0.22-winx64\bin;C:\Program Files\Git\cmd;E:\xshell\;E:\Xftp\;E:\;D:\QLDownload\Scripts\;D:\QLDownload\;D:\app\anaconda3;D:\app\anaconda3\Library\mingw-w64\bin;D:\app\anaconda3\Library\usr\bin;D:\app\anaconda3\Library\bin;D:\app\anaconda3\Scripts;D:\app\QQPCMgr\python\Scripts\;D:\app\QQPCMgr\python\;C:\Users\龙文暇\AppData\Local\Microsoft\WindowsApps;;d:\py\Pycharm2021.2.4\bin;;.]
+2024-09-05 12:55:41.496 [localhost-startStop-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/ihealth].log:180 - Initializing Spring embedded WebApplicationContext
+2024-09-05 12:55:41.496 [localhost-startStop-1] INFO  org.springframework.web.context.ContextLoader.prepareWebApplicationContext:285 - Root WebApplicationContext: initialization completed in 897 ms
+2024-09-05 12:55:41.609 [localhost-startStop-1] INFO  o.s.boot.web.servlet.ServletRegistrationBean.addRegistration:185 - Servlet dispatcherServlet mapped to [/]
+2024-09-05 12:55:41.612 [localhost-startStop-1] INFO  o.s.boot.web.servlet.FilterRegistrationBean.configure:244 - Mapping filter: 'characterEncodingFilter' to: [/*]
+2024-09-05 12:55:41.613 [localhost-startStop-1] INFO  o.s.boot.web.servlet.FilterRegistrationBean.configure:244 - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2024-09-05 12:55:41.613 [localhost-startStop-1] INFO  o.s.boot.web.servlet.FilterRegistrationBean.configure:244 - Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2024-09-05 12:55:41.613 [localhost-startStop-1] INFO  o.s.boot.web.servlet.FilterRegistrationBean.configure:244 - Mapping filter: 'requestContextFilter' to: [/*]
+2024-09-05 12:55:41.707 [main] INFO  c.a.d.s.boot.autoconfigure.DruidDataSourceAutoConfigure.dataSource:56 - Init DruidDataSource
+2024-09-05 12:55:41.778 [main] INFO  com.alibaba.druid.pool.DruidDataSource.init:1003 - {dataSource-1} inited
+2024-09-05 12:55:41.958 [main] INFO  o.s.web.servlet.handler.SimpleUrlHandlerMapping.registerHandler:373 - Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2024-09-05 12:55:42.150 [main] INFO  o.s.w.s.m.method.annotation.RequestMappingHandlerAdapter.initControllerAdviceCache:574 - Looking for @ControllerAdvice: org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@3f91b517: startup date [Thu Sep 05 12:55:40 CST 2024]; root of context hierarchy
+2024-09-05 12:55:42.198 [main] INFO  o.s.w.s.m.method.annotation.RequestMappingHandlerMapping.register:547 - Mapped "{[/collection/save],methods=[POST]}" onto public com.project.ihealth.po.RestResponse<java.lang.Long> com.project.ihealth.controller.CollectionController.saveCollection(com.project.ihealth.dao.po.CollectionEntry)
+2024-09-05 12:55:42.198 [main] INFO  o.s.w.s.m.method.annotation.RequestMappingHandlerMapping.register:547 - Mapped "{[/collection/saveResult],methods=[POST]}" onto public java.lang.Object com.project.ihealth.controller.CollectionController.saveDoctorRecommendation(com.project.ihealth.dao.po.CollectionEntry)
+2024-09-05 12:55:42.200 [main] INFO  o.s.w.s.m.method.annotation.RequestMappingHandlerMapping.register:547 - Mapped "{[/user/register],methods=[POST]}" onto public com.project.ihealth.po.RestResponse com.project.ihealth.controller.UserController.register(com.project.ihealth.dao.po.UserInfo)
+2024-09-05 12:55:42.200 [main] INFO  o.s.w.s.m.method.annotation.RequestMappingHandlerMapping.register:547 - Mapped "{[/user/login],methods=[POST]}" onto public com.project.ihealth.po.RestResponse com.project.ihealth.controller.UserController.login(com.project.ihealth.dao.po.UserInfo)
+2024-09-05 12:55:42.202 [main] INFO  o.s.w.s.m.method.annotation.RequestMappingHandlerMapping.register:547 - Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2024-09-05 12:55:42.202 [main] INFO  o.s.w.s.m.method.annotation.RequestMappingHandlerMapping.register:547 - Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2024-09-05 12:55:42.218 [main] INFO  o.s.web.servlet.handler.SimpleUrlHandlerMapping.registerHandler:373 - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2024-09-05 12:55:42.219 [main] INFO  o.s.web.servlet.handler.SimpleUrlHandlerMapping.registerHandler:373 - Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2024-09-05 12:55:42.253 [main] INFO  o.s.b.a.web.servlet.WelcomePageHandlerMapping.<init>:56 - Adding welcome page: class path resource [views/index.html]
+2024-09-05 12:55:42.414 [main] INFO  o.s.jmx.export.annotation.AnnotationMBeanExporter.afterSingletonsInstantiated:433 - Registering beans for JMX exposure on startup
+2024-09-05 12:55:42.415 [main] INFO  o.s.jmx.export.annotation.AnnotationMBeanExporter.autodetect:895 - Bean with name 'dataSource' has been autodetected for JMX exposure
+2024-09-05 12:55:42.422 [main] INFO  o.s.jmx.export.annotation.AnnotationMBeanExporter.registerBeanInstance:668 - Located MBean 'dataSource': registering with JMX server as MBean [com.alibaba.druid.spring.boot.autoconfigure:name=dataSource,type=DruidDataSourceWrapper]
+2024-09-05 12:55:42.437 [main] INFO  org.apache.coyote.http11.Http11NioProtocol.log:180 - Starting ProtocolHandler ["http-nio-8080"]
+2024-09-05 12:55:42.445 [main] INFO  org.apache.tomcat.util.net.NioSelectorPool.log:180 - Using a shared selector for servlet write/read
+2024-09-05 12:55:42.461 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/ihealth].log:180 - Initializing Spring FrameworkServlet 'dispatcherServlet'
+2024-09-05 12:55:42.462 [main] INFO  org.springframework.web.servlet.DispatcherServlet.initServletBean:494 - FrameworkServlet 'dispatcherServlet': initialization started
+2024-09-05 12:55:42.481 [main] INFO  org.springframework.web.servlet.DispatcherServlet.initServletBean:509 - FrameworkServlet 'dispatcherServlet': initialization completed in 19 ms
+2024-09-05 12:55:42.483 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer.start:206 - Tomcat started on port(s): 8080 (http) with context path '/ihealth'
+2024-09-05 12:55:42.489 [main] INFO  com.project.ihealth.IHealthApplicaiton.logStarted:59 - Started IHealthApplicaiton in 2.205 seconds (JVM running for 3.304)
+2024-09-05 12:56:50.839 [Thread-6] INFO  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext.doClose:993 - Closing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@3f91b517: startup date [Thu Sep 05 12:55:40 CST 2024]; root of context hierarchy
+2024-09-05 12:56:50.842 [Thread-6] INFO  o.s.jmx.export.annotation.AnnotationMBeanExporter.destroy:451 - Unregistering JMX-exposed beans on shutdown
+2024-09-05 12:56:50.842 [Thread-6] INFO  o.s.jmx.export.annotation.AnnotationMBeanExporter.unregisterBeans:183 - Unregistering JMX-exposed beans
+2024-09-05 12:56:50.843 [Thread-6] INFO  com.alibaba.druid.pool.DruidDataSource.close:1948 - {dataSource-1} closing ...
+2024-09-05 12:56:50.844 [Thread-6] INFO  com.alibaba.druid.pool.DruidDataSource.close:2020 - {dataSource-1} closed
+2024-09-05 12:56:54.165 [main] INFO  com.project.ihealth.IHealthApplicaiton.logStarting:50 - Starting IHealthApplicaiton on Lisa-acer with PID 30940 (E:\myProject\i-health\target\classes started by 龙文暇 in E:\myProject\i-health)
+2024-09-05 12:56:54.167 [main] INFO  com.project.ihealth.IHealthApplicaiton.logStartupProfileInfo:659 - No active profile set, falling back to default profiles: default
+2024-09-05 12:56:54.201 [main] INFO  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext.prepareRefresh:590 - Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@172b013: startup date [Thu Sep 05 12:56:54 CST 2024]; root of context hierarchy
+2024-09-05 12:56:55.016 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer.initialize:91 - Tomcat initialized with port(s): 8080 (http)
+2024-09-05 12:56:55.027 [main] INFO  org.apache.coyote.http11.Http11NioProtocol.log:180 - Initializing ProtocolHandler ["http-nio-8080"]
+2024-09-05 12:56:55.033 [main] INFO  org.apache.catalina.core.StandardService.log:180 - Starting service [Tomcat]
+2024-09-05 12:56:55.034 [main] INFO  org.apache.catalina.core.StandardEngine.log:180 - Starting Servlet Engine: Apache Tomcat/8.5.29
+2024-09-05 12:56:55.039 [localhost-startStop-1] INFO  org.apache.catalina.core.AprLifecycleListener.log:180 - The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [E:\idea&support\jdk-8u\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\Program Files\MySQL\MySQL Server 8.0\bin;E:\idea&support\jdk-8u\bin;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;D:\app\QQPCMgr\python;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\WINDOWS\system32;E:\BaiduNetdiskDownload\Microsoft VS Code\bin;E:\idea&support\mysql\mysql-8.0.22-winx64\bin;C:\Program Files\Git\cmd;E:\xshell\;E:\Xftp\;E:\;D:\QLDownload\Scripts\;D:\QLDownload\;D:\app\anaconda3;D:\app\anaconda3\Library\mingw-w64\bin;D:\app\anaconda3\Library\usr\bin;D:\app\anaconda3\Library\bin;D:\app\anaconda3\Scripts;D:\app\QQPCMgr\python\Scripts\;D:\app\QQPCMgr\python\;C:\Users\龙文暇\AppData\Local\Microsoft\WindowsApps;;d:\py\Pycharm2021.2.4\bin;;.]
+2024-09-05 12:56:55.110 [localhost-startStop-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/ihealth].log:180 - Initializing Spring embedded WebApplicationContext
+2024-09-05 12:56:55.110 [localhost-startStop-1] INFO  org.springframework.web.context.ContextLoader.prepareWebApplicationContext:285 - Root WebApplicationContext: initialization completed in 909 ms
+2024-09-05 12:56:55.209 [localhost-startStop-1] INFO  o.s.boot.web.servlet.ServletRegistrationBean.addRegistration:185 - Servlet dispatcherServlet mapped to [/]
+2024-09-05 12:56:55.212 [localhost-startStop-1] INFO  o.s.boot.web.servlet.FilterRegistrationBean.configure:244 - Mapping filter: 'characterEncodingFilter' to: [/*]
+2024-09-05 12:56:55.213 [localhost-startStop-1] INFO  o.s.boot.web.servlet.FilterRegistrationBean.configure:244 - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2024-09-05 12:56:55.213 [localhost-startStop-1] INFO  o.s.boot.web.servlet.FilterRegistrationBean.configure:244 - Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2024-09-05 12:56:55.213 [localhost-startStop-1] INFO  o.s.boot.web.servlet.FilterRegistrationBean.configure:244 - Mapping filter: 'requestContextFilter' to: [/*]
+2024-09-05 12:56:55.308 [main] INFO  c.a.d.s.boot.autoconfigure.DruidDataSourceAutoConfigure.dataSource:56 - Init DruidDataSource
+2024-09-05 12:56:55.376 [main] INFO  com.alibaba.druid.pool.DruidDataSource.init:1003 - {dataSource-1} inited
+2024-09-05 12:56:55.539 [main] INFO  o.s.web.servlet.handler.SimpleUrlHandlerMapping.registerHandler:373 - Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2024-09-05 12:56:55.731 [main] INFO  o.s.w.s.m.method.annotation.RequestMappingHandlerAdapter.initControllerAdviceCache:574 - Looking for @ControllerAdvice: org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@172b013: startup date [Thu Sep 05 12:56:54 CST 2024]; root of context hierarchy
+2024-09-05 12:56:55.782 [main] INFO  o.s.w.s.m.method.annotation.RequestMappingHandlerMapping.register:547 - Mapped "{[/collection/saveResult],methods=[POST]}" onto public java.lang.Object com.project.ihealth.controller.CollectionController.saveDoctorRecommendation(com.project.ihealth.dao.po.CollectionEntry)
+2024-09-05 12:56:55.783 [main] INFO  o.s.w.s.m.method.annotation.RequestMappingHandlerMapping.register:547 - Mapped "{[/collection/save],methods=[POST]}" onto public com.project.ihealth.po.RestResponse<java.lang.Long> com.project.ihealth.controller.CollectionController.saveCollection(com.project.ihealth.dao.po.CollectionEntry)
+2024-09-05 12:56:55.784 [main] INFO  o.s.w.s.m.method.annotation.RequestMappingHandlerMapping.register:547 - Mapped "{[/user/register],methods=[POST]}" onto public com.project.ihealth.po.RestResponse com.project.ihealth.controller.UserController.register(com.project.ihealth.dao.po.UserInfo)
+2024-09-05 12:56:55.785 [main] INFO  o.s.w.s.m.method.annotation.RequestMappingHandlerMapping.register:547 - Mapped "{[/user/login],methods=[POST]}" onto public com.project.ihealth.po.RestResponse com.project.ihealth.controller.UserController.login(com.project.ihealth.dao.po.UserInfo)
+2024-09-05 12:56:55.789 [main] INFO  o.s.w.s.m.method.annotation.RequestMappingHandlerMapping.register:547 - Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2024-09-05 12:56:55.790 [main] INFO  o.s.w.s.m.method.annotation.RequestMappingHandlerMapping.register:547 - Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2024-09-05 12:56:55.813 [main] INFO  o.s.web.servlet.handler.SimpleUrlHandlerMapping.registerHandler:373 - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2024-09-05 12:56:55.813 [main] INFO  o.s.web.servlet.handler.SimpleUrlHandlerMapping.registerHandler:373 - Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2024-09-05 12:56:55.851 [main] INFO  o.s.b.a.web.servlet.WelcomePageHandlerMapping.<init>:56 - Adding welcome page: class path resource [views/index.html]
+2024-09-05 12:56:56.052 [main] INFO  o.s.jmx.export.annotation.AnnotationMBeanExporter.afterSingletonsInstantiated:433 - Registering beans for JMX exposure on startup
+2024-09-05 12:56:56.054 [main] INFO  o.s.jmx.export.annotation.AnnotationMBeanExporter.autodetect:895 - Bean with name 'dataSource' has been autodetected for JMX exposure
+2024-09-05 12:56:56.059 [main] INFO  o.s.jmx.export.annotation.AnnotationMBeanExporter.registerBeanInstance:668 - Located MBean 'dataSource': registering with JMX server as MBean [com.alibaba.druid.spring.boot.autoconfigure:name=dataSource,type=DruidDataSourceWrapper]
+2024-09-05 12:56:56.071 [main] INFO  org.apache.coyote.http11.Http11NioProtocol.log:180 - Starting ProtocolHandler ["http-nio-8080"]
+2024-09-05 12:56:56.082 [main] INFO  org.apache.tomcat.util.net.NioSelectorPool.log:180 - Using a shared selector for servlet write/read
+2024-09-05 12:56:56.095 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/ihealth].log:180 - Initializing Spring FrameworkServlet 'dispatcherServlet'
+2024-09-05 12:56:56.095 [main] INFO  org.springframework.web.servlet.DispatcherServlet.initServletBean:494 - FrameworkServlet 'dispatcherServlet': initialization started
+2024-09-05 12:56:56.114 [main] INFO  org.springframework.web.servlet.DispatcherServlet.initServletBean:509 - FrameworkServlet 'dispatcherServlet': initialization completed in 19 ms
+2024-09-05 12:56:56.116 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer.start:206 - Tomcat started on port(s): 8080 (http) with context path '/ihealth'
+2024-09-05 12:56:56.119 [main] INFO  com.project.ihealth.IHealthApplicaiton.logStarted:59 - Started IHealthApplicaiton in 2.226 seconds (JVM running for 3.211)
+2024-09-05 12:59:06.546 [Thread-6] INFO  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext.doClose:993 - Closing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@172b013: startup date [Thu Sep 05 12:56:54 CST 2024]; root of context hierarchy
+2024-09-05 12:59:06.549 [Thread-6] INFO  o.s.jmx.export.annotation.AnnotationMBeanExporter.destroy:451 - Unregistering JMX-exposed beans on shutdown
+2024-09-05 12:59:06.550 [Thread-6] INFO  o.s.jmx.export.annotation.AnnotationMBeanExporter.unregisterBeans:183 - Unregistering JMX-exposed beans
+2024-09-05 12:59:06.551 [Thread-6] INFO  com.alibaba.druid.pool.DruidDataSource.close:1948 - {dataSource-1} closing ...
+2024-09-05 12:59:06.552 [Thread-6] INFO  com.alibaba.druid.pool.DruidDataSource.close:2020 - {dataSource-1} closed
+2024-09-05 12:59:10.288 [main] INFO  com.project.ihealth.IHealthApplicaiton.logStarting:50 - Starting IHealthApplicaiton on Lisa-acer with PID 30848 (E:\myProject\i-health\target\classes started by 龙文暇 in E:\myProject\i-health)
+2024-09-05 12:59:10.291 [main] INFO  com.project.ihealth.IHealthApplicaiton.logStartupProfileInfo:659 - No active profile set, falling back to default profiles: default
+2024-09-05 12:59:10.332 [main] INFO  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext.prepareRefresh:590 - Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@401f7633: startup date [Thu Sep 05 12:59:10 CST 2024]; root of context hierarchy
+2024-09-05 12:59:11.273 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer.initialize:91 - Tomcat initialized with port(s): 8080 (http)
+2024-09-05 12:59:11.282 [main] INFO  org.apache.coyote.http11.Http11NioProtocol.log:180 - Initializing ProtocolHandler ["http-nio-8080"]
+2024-09-05 12:59:11.288 [main] INFO  org.apache.catalina.core.StandardService.log:180 - Starting service [Tomcat]
+2024-09-05 12:59:11.289 [main] INFO  org.apache.catalina.core.StandardEngine.log:180 - Starting Servlet Engine: Apache Tomcat/8.5.29
+2024-09-05 12:59:11.293 [localhost-startStop-1] INFO  org.apache.catalina.core.AprLifecycleListener.log:180 - The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [E:\idea&support\jdk-8u\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\Program Files\MySQL\MySQL Server 8.0\bin;E:\idea&support\jdk-8u\bin;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;D:\app\QQPCMgr\python;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\WINDOWS\system32;E:\BaiduNetdiskDownload\Microsoft VS Code\bin;E:\idea&support\mysql\mysql-8.0.22-winx64\bin;C:\Program Files\Git\cmd;E:\xshell\;E:\Xftp\;E:\;D:\QLDownload\Scripts\;D:\QLDownload\;D:\app\anaconda3;D:\app\anaconda3\Library\mingw-w64\bin;D:\app\anaconda3\Library\usr\bin;D:\app\anaconda3\Library\bin;D:\app\anaconda3\Scripts;D:\app\QQPCMgr\python\Scripts\;D:\app\QQPCMgr\python\;C:\Users\龙文暇\AppData\Local\Microsoft\WindowsApps;;d:\py\Pycharm2021.2.4\bin;;.]
+2024-09-05 12:59:11.362 [localhost-startStop-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/ihealth].log:180 - Initializing Spring embedded WebApplicationContext
+2024-09-05 12:59:11.362 [localhost-startStop-1] INFO  org.springframework.web.context.ContextLoader.prepareWebApplicationContext:285 - Root WebApplicationContext: initialization completed in 1030 ms
+2024-09-05 12:59:11.464 [localhost-startStop-1] INFO  o.s.boot.web.servlet.ServletRegistrationBean.addRegistration:185 - Servlet dispatcherServlet mapped to [/]
+2024-09-05 12:59:11.469 [localhost-startStop-1] INFO  o.s.boot.web.servlet.FilterRegistrationBean.configure:244 - Mapping filter: 'characterEncodingFilter' to: [/*]
+2024-09-05 12:59:11.470 [localhost-startStop-1] INFO  o.s.boot.web.servlet.FilterRegistrationBean.configure:244 - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2024-09-05 12:59:11.470 [localhost-startStop-1] INFO  o.s.boot.web.servlet.FilterRegistrationBean.configure:244 - Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2024-09-05 12:59:11.470 [localhost-startStop-1] INFO  o.s.boot.web.servlet.FilterRegistrationBean.configure:244 - Mapping filter: 'requestContextFilter' to: [/*]
+2024-09-05 12:59:11.563 [main] INFO  c.a.d.s.boot.autoconfigure.DruidDataSourceAutoConfigure.dataSource:56 - Init DruidDataSource
+2024-09-05 12:59:11.636 [main] INFO  com.alibaba.druid.pool.DruidDataSource.init:1003 - {dataSource-1} inited
+2024-09-05 12:59:11.858 [main] INFO  o.s.web.servlet.handler.SimpleUrlHandlerMapping.registerHandler:373 - Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2024-09-05 12:59:12.091 [main] INFO  o.s.w.s.m.method.annotation.RequestMappingHandlerAdapter.initControllerAdviceCache:574 - Looking for @ControllerAdvice: org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@401f7633: startup date [Thu Sep 05 12:59:10 CST 2024]; root of context hierarchy
+2024-09-05 12:59:12.145 [main] INFO  o.s.w.s.m.method.annotation.RequestMappingHandlerMapping.register:547 - Mapped "{[/collection/save],methods=[POST]}" onto public com.project.ihealth.po.RestResponse<java.lang.Long> com.project.ihealth.controller.CollectionController.saveCollection(com.project.ihealth.dao.po.CollectionEntry)
+2024-09-05 12:59:12.146 [main] INFO  o.s.w.s.m.method.annotation.RequestMappingHandlerMapping.register:547 - Mapped "{[/collection/saveResult],methods=[POST]}" onto public java.lang.Object com.project.ihealth.controller.CollectionController.saveDoctorRecommendation(com.project.ihealth.dao.po.CollectionEntry)
+2024-09-05 12:59:12.147 [main] INFO  o.s.w.s.m.method.annotation.RequestMappingHandlerMapping.register:547 - Mapped "{[/user/register],methods=[POST]}" onto public com.project.ihealth.po.RestResponse com.project.ihealth.controller.UserController.register(com.project.ihealth.dao.po.UserInfo)
+2024-09-05 12:59:12.147 [main] INFO  o.s.w.s.m.method.annotation.RequestMappingHandlerMapping.register:547 - Mapped "{[/user/login],methods=[POST]}" onto public com.project.ihealth.po.RestResponse com.project.ihealth.controller.UserController.login(com.project.ihealth.dao.po.UserInfo)
+2024-09-05 12:59:12.149 [main] INFO  o.s.w.s.m.method.annotation.RequestMappingHandlerMapping.register:547 - Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2024-09-05 12:59:12.149 [main] INFO  o.s.w.s.m.method.annotation.RequestMappingHandlerMapping.register:547 - Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2024-09-05 12:59:12.170 [main] INFO  o.s.web.servlet.handler.SimpleUrlHandlerMapping.registerHandler:373 - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2024-09-05 12:59:12.171 [main] INFO  o.s.web.servlet.handler.SimpleUrlHandlerMapping.registerHandler:373 - Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2024-09-05 12:59:12.208 [main] INFO  o.s.b.a.web.servlet.WelcomePageHandlerMapping.<init>:56 - Adding welcome page: class path resource [views/index.html]
+2024-09-05 12:59:12.376 [main] INFO  o.s.jmx.export.annotation.AnnotationMBeanExporter.afterSingletonsInstantiated:433 - Registering beans for JMX exposure on startup
+2024-09-05 12:59:12.378 [main] INFO  o.s.jmx.export.annotation.AnnotationMBeanExporter.autodetect:895 - Bean with name 'dataSource' has been autodetected for JMX exposure
+2024-09-05 12:59:12.382 [main] INFO  o.s.jmx.export.annotation.AnnotationMBeanExporter.registerBeanInstance:668 - Located MBean 'dataSource': registering with JMX server as MBean [com.alibaba.druid.spring.boot.autoconfigure:name=dataSource,type=DruidDataSourceWrapper]
+2024-09-05 12:59:12.393 [main] INFO  org.apache.coyote.http11.Http11NioProtocol.log:180 - Starting ProtocolHandler ["http-nio-8080"]
+2024-09-05 12:59:12.400 [main] INFO  org.apache.tomcat.util.net.NioSelectorPool.log:180 - Using a shared selector for servlet write/read
+2024-09-05 12:59:12.415 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/ihealth].log:180 - Initializing Spring FrameworkServlet 'dispatcherServlet'
+2024-09-05 12:59:12.416 [main] INFO  org.springframework.web.servlet.DispatcherServlet.initServletBean:494 - FrameworkServlet 'dispatcherServlet': initialization started
+2024-09-05 12:59:12.435 [main] INFO  org.springframework.web.servlet.DispatcherServlet.initServletBean:509 - FrameworkServlet 'dispatcherServlet': initialization completed in 19 ms
+2024-09-05 12:59:12.437 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer.start:206 - Tomcat started on port(s): 8080 (http) with context path '/ihealth'
+2024-09-05 12:59:12.441 [main] INFO  com.project.ihealth.IHealthApplicaiton.logStarted:59 - Started IHealthApplicaiton in 2.38 seconds (JVM running for 3.679)
+2024-09-05 13:05:00.708 [Thread-7] INFO  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext.doClose:993 - Closing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@401f7633: startup date [Thu Sep 05 12:59:10 CST 2024]; root of context hierarchy
+2024-09-05 13:05:00.711 [Thread-7] INFO  o.s.jmx.export.annotation.AnnotationMBeanExporter.destroy:451 - Unregistering JMX-exposed beans on shutdown
+2024-09-05 13:05:00.712 [Thread-7] INFO  o.s.jmx.export.annotation.AnnotationMBeanExporter.unregisterBeans:183 - Unregistering JMX-exposed beans
+2024-09-05 13:05:00.714 [Thread-7] INFO  com.alibaba.druid.pool.DruidDataSource.close:1948 - {dataSource-1} closing ...
+2024-09-05 13:05:00.717 [Thread-7] INFO  com.alibaba.druid.pool.DruidDataSource.close:2020 - {dataSource-1} closed
