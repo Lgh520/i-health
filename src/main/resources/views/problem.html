@@ -94,8 +94,8 @@
                         if (["肚子疼", "腹泻", "恶心"].includes(this.choiceAnswer[0][0])) {
                             if (type == 1) {
                                 if (user.sex == "male") {
-                                    this.imgUrl = "./img/diduzinan.png"
-                                    this.description = "模拟肚子疼"
+                                    this.imgUrl = "./img/肚子低男.png"
+                                    this.description = "医生助手正在模拟肚子疼"
                                 } else {
                                     this.imgUrl = "./img/diduzinv.png"
                                     this.description = "模拟肚子疼"
@@ -222,7 +222,7 @@
                                 }
                             });
                         } else if (text.includes('肚子疼')) {
-                            return '下面的图片展示了类似于焦虑的情况，请问目前您是长期处于焦虑状态还是短期？'
+                            return '下面的图片展示了类似于焦虑的情况，请问目前您是长期处于焦虑状态还是短期？（根据您自己的病情状况选择，图片只是示例）'
                         }
                         return replaceText
                     }

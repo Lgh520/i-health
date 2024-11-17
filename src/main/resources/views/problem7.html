@@ -64,14 +64,14 @@
             data: {
                 isOne: true,
                 urlList: [
-                    "https://www.lediaocha.com/r/ge8gk",
-                    "https://www.lediaocha.com/r/nemlp",
-                    "https://www.lediaocha.com/r/ylrqz",
-                    "https://www.lediaocha.com/r/5y6v6",
-                    "https://www.lediaocha.com/r/7ylxr",
-                    "https://www.lediaocha.com/r/x9v5k",
-                    "https://www.lediaocha.com/r/qe6gy",
-                    "https://www.lediaocha.com/r/pqorx"
+                    "https://pro.powercx.com/r/qev6q?id=0",
+                    "https://pro.powercx.com/r/qev6q?id=1",
+                    "https://pro.powercx.com/r/qev6q?id=2",
+                    "https://pro.powercx.com/r/qev6q?id=3",
+                    "https://pro.powercx.com/r/qev6q?id=4",
+                    "https://pro.powercx.com/r/qev6q?id=5",
+                    "https://pro.powercx.com/r/qev6q?id=6",
+                    "https://pro.powercx.com/r/qev6q?id=7"
                 ]
             },
             methods: {
@@ -79,9 +79,19 @@
                     var queryString = window.location.search;
                     var id = Number(queryString.replace('?id=', ''));
                     const curId = localStorage.getItem("curId") || 0
+                    // 生成token
+                    // let baseToken = id + '' + Date.now();
+                    // console.log("baseToken=" + baseToken)
+                    // let token = window.btoa(unescape(encodeURI(baseToken)));
+                    // let token = window.location.href;
+                    let token = sessionStorage.getItem("token")
+                    if(token===null){
+                        token = localStorage.getItem("token",token)
+                    }
                     let doctorResult = {
                         "id": id,
-                        "doctorRecommendation": value
+                        "doctorRecommendation": value,
+                        "token": token
                     }
                     $.ajax({
                         url: '/ihealth/collection/saveResult',
@@ -96,7 +106,7 @@
                             console.log("error: save failed!");
                         }
                     });
-                    window.location.href = this.urlList[curId];
+                    window.location.href = this.urlList[curId] + "&token="+ token;
                 },
 
             },

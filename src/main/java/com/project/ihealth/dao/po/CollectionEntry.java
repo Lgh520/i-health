@@ -17,4 +17,5 @@ public class CollectionEntry {
     private LocalDateTime createdAt;
     private String randomImage;
     private String doctorRecommendation;
+    private String token;
 }

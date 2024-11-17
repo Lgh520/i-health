@@ -43,10 +43,10 @@
             <h1>建立患者档案</h1>
 
             <!-- 添加姓名输入框 -->
-            <div class="form-item">
-                <label for="userName">患者姓名：</label>
-                <input type="text" id="userName" v-model="registerForm.userName" placeholder="请输入患者姓名">
-            </div>
+<!--            <div class="form-item">-->
+<!--                <label for="userName">患者姓名：</label>-->
+<!--                <input type="text" id="userName" v-model="registerForm.userName" placeholder="可不填真实姓名">-->
+<!--            </div>-->
 
             <!-- 添加性别单选按钮 -->
             <div class="form-item">
@@ -85,18 +85,18 @@
             el: '#login',
             data: {
                 registerForm: {
-                    userName: '',
+                    // userName: '',
                     sex: '',
                     birth: '2000-01-01',
                     city: '',
                     phone: ''
                 },
                 registerRules: {
-                    userName: [{
-                        required: true,
-                        message: '患者姓名不能为空',
-                        trigger: 'blur'
-                    }],
+                    // userName: [{
+                    //     required: true,
+                    //     message: '患者姓名不能为空',
+                    //     trigger: 'blur'
+                    // }],
                     sex: [{
                         required: true,
                         message: '患者性别不能为空',
@@ -122,9 +122,9 @@
             },
             methods: {
                 registerSubmit: function () {
-                    if (this.registerForm.userName == '') {
-                        return this.$message.error('请填写用户名')
-                    }
+                    // if (this.registerForm.userName == '') {
+                    //     return this.$message.error('请填写用户名')
+                    // }
                     if (this.registerForm.sex == '') {
                         return this.$message.error('请填写性别')
                     }
@@ -162,6 +162,9 @@
     </script>
 
     <style>
+        input::placeholder {
+            color: rgba(0,0,0,.2)
+        }
         .form-item {
             text-align: left;
             margin-left: 40px;

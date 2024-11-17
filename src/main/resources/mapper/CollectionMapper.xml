@@ -18,7 +18,7 @@
         VALUES (#{userName}, #{questionId}, #{phoneNumber}, #{collectionInfo}, #{ip}, #{randomImage})
     </insert>
     <update id="update" parameterType="com.project.ihealth.dao.po.CollectionEntry">
-        update collection_table set doctor_recommendation = #{doctorRecommendation} where id = #{id}
+        update collection_table set doctor_recommendation = #{doctorRecommendation}, token =#{token} where id = #{id}
     </update>
 
     <select id="findById" resultMap="BaseResultMap">

@@ -93,6 +93,50 @@
         </div>
     </div>
     <script>
+        // window.onload = function () {
+        //
+        //     let baseToken = '' + Date.now();
+        //     console.log("baseToken=" + baseToken)
+        //     let token = window.btoa(unescape(encodeURI(baseToken)));
+        //     console.log('1111111',token)
+        //     let currentUrl = window.location.href;
+        //     let newUrl = currentUrl + '&token=' + token;
+        //     console.log('2222222222',newUrl)
+        //     window.location.href = newUrl;
+        // }
+        window.onload = function () {
+            // 获取当前 URL
+            let currentUrl = window.location.href;
+            console.log("currentUrl:" + currentUrl)
+            // 检查 URL 中是否已存在 token 参数
+            let urlParams = new URLSearchParams(window.location.search);
+            console.log("urlParams:" + urlParams)
+            // 获取前置问卷平台的token方法
+            if (urlParams.has('token')) {
+                let token = urlParams.get('token');
+                console.log('Generated token:', token);
+                urlParams.set('token', token);
+                sessionStorage.setItem("token",token)
+                localStorage.setItem("token",token)
+            }
+            // 自己生成token的if方法
+            // if (!urlParams.has('token')) {
+            //     let baseToken = '' + Date.now();
+            //     // 编码baseToken为Base64
+            //     let token = window.btoa(unescape(encodeURI(baseToken)));
+            //     console.log('Generated token:', token);
+            //     // 如果不存在 token 参数，则添加新的 token 参数
+            //     urlParams.set('token', token);
+            //     // 生成新的 URL
+            //     let newUrl = currentUrl.split('?')[0] + '?' + urlParams.toString();
+            //     console.log('New URL:', newUrl);
+            //     // 重定向到新的 URL
+            //     window.location.href = newUrl;
+            //     sessionStorage.setItem("token",token)
+            //     localStorage.setItem("token",token)
+            // }
+
+        }
         let vm = new Vue({
             el: '#app',
             data: {
