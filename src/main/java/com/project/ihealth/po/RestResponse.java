@@ -17,6 +17,13 @@ public class RestResponse<T> {
                 .data(data)
                 .build();
     }
+    public static <T> RestResponse<T> success(T data, String message){
+        return RestResponse.<T>builder()
+                .code(0)
+                .message(message)
+                .data(data)
+                .build();
+    }
 
     public static <T> RestResponse<T> error(int code,String msg){
         return RestResponse.<T>builder()

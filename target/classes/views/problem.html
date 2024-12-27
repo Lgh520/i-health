@@ -156,8 +156,8 @@
                             data: JSON.stringify(obj),
                             success: function (data) {
                                 if (data.code == 0) {
-
-
+                                    console.log(data)
+                                    localStorage.setItem("pngName", data.message)
                                     window.location.href = './problem7.html?id=' + data.data;
                                 } else {
                                     _this.$message.error(data.msg);

@@ -49,8 +49,8 @@
                 6.{{curId>3?'根据您的病情为您推荐的医生':'我可以想象这个病情让你很痛苦，我会尽力帮助您🤗🤗🤗。以下是根据您的病情为您推荐的医生。'}}</p>
 
             <div>
-                <img style="height: 165px" v-if="isOne" src="肚子痛医生.png">
-                <img style="height: 165px" v-else src="焦虑医生.png">
+                <img style="height: 165px" v-if="isOne" id="stomachAche" :src="stomachAcheName">
+                <img style="height: 165px" v-else id="anxiety" :src="anxietyName">
             </div>
             <div>
                 <button @click="confirm('取消，不接受该医生推荐')" class="cancel-button">取消，不接受该医生推荐</button>
@@ -63,6 +63,8 @@
             el: '#login',
             data: {
                 isOne: true,
+                anxietyName: "焦虑医生.png",
+                stomachAcheName: "肚子痛医生.png",
                 urlList: [
                     "https://pro.powercx.com/r/qev6q?id=0",
                     "https://pro.powercx.com/r/qev6q?id=1",
@@ -113,6 +115,8 @@
             created() {
                 this.isOne = ["肚子疼", "腹泻", "恶心"].includes(localStorage.getItem("symptom"));
                 this.curId = localStorage.getItem("curId") || 0
+                this.anxietyName = localStorage.getItem("pngName") || "焦虑医生.png";
+                this.stomachAcheName = localStorage.getItem("pngName") || "肚子痛医生.png";
             }
         });
     </script>

@@ -18,4 +18,5 @@ public class CollectionEntry {
     private String randomImage;
     private String doctorRecommendation;
     private String token;
+    private String pngName;
 }
